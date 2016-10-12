@@ -388,7 +388,11 @@ a;b;c</code></pre></div>
 <pre><code>## [1] &quot;character&quot;</code></pre>
 <p>Hemos visto tres formas de generar vectores, una forma que nos permite generar vectores lógicos para lo cual utilizamos expresiones lógicas (en la tabla 1 se pueden ver algunas expresiones y operadores lógicos).</p>
 <p><strong>Tabla 1</strong>: Expresiones Lógicas</p>
-<table>
+<table style="width:49%;">
+<colgroup>
+<col width="30%"></col>
+<col width="18%"></col>
+</colgroup>
 <thead>
 <tr class="header">
 <th align="left">Descripción</th>
@@ -397,28 +401,28 @@ a;b;c</code></pre></div>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Mayor que</td>
-<td align="left">&gt;</td>
+<td align="left"><p>Mayor que</p></td>
+<td align="left"><p><span class="math inline">\(&gt;\)</span></p></td>
 </tr>
 <tr class="even">
-<td align="left">Menor que</td>
-<td align="left">&lt;</td>
+<td align="left"><p>Menor que</p></td>
+<td align="left"><p><span class="math inline">\(&lt;\)</span></p></td>
 </tr>
 <tr class="odd">
-<td align="left">Mayor o igual que</td>
-<td align="left">&gt;=</td>
+<td align="left"><p>Mayor o igual que</p></td>
+<td align="left"><p><span class="math inline">\(&gt;=\)</span></p></td>
 </tr>
 <tr class="even">
-<td align="left">Menor o igual que</td>
-<td align="left">&lt;=</td>
+<td align="left"><p>Menor o igual que</p></td>
+<td align="left"><p><span class="math inline">\(&lt;=\)</span></p></td>
 </tr>
 <tr class="odd">
-<td align="left">Igual que</td>
-<td align="left">==</td>
+<td align="left"><p>Igual que</p></td>
+<td align="left"><p><span class="math inline">\(==\)</span></p></td>
 </tr>
 <tr class="even">
-<td align="left">No es igual que</td>
-<td align="left">!=</td>
+<td align="left"><p>No es igual que</p></td>
+<td align="left"><p><span class="math inline">\(!=\)</span></p></td>
 </tr>
 </tbody>
 </table>
@@ -634,9 +638,9 @@ x*<span class="dv">2</span>; <span class="kw">sqrt</span>(x); x^<span class="dv"
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">z &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">rnorm</span>(<span class="dv">10</span>, <span class="dv">4</span>, <span class="dv">1</span>), <span class="dv">0</span>)
 
 <span class="kw">sort</span>(z)</code></pre></div>
-<pre><code>##  [1] 3 3 4 4 4 5 5 5 5 6</code></pre>
+<pre><code>##  [1] 2 2 3 4 4 4 4 4 5 5</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">order</span>(z, <span class="dt">decreasing=</span><span class="ot">FALSE</span>)</code></pre></div>
-<pre><code>##  [1]  2  3  1  6 10  4  5  7  8  9</code></pre>
+<pre><code>##  [1]  5  9 10  1  3  6  7  8  2  4</code></pre>
 <p>La diferencia entre estas dos funciones es que sort lo que hace es ordenar la función en orden ascendente. Mientras que order genera un vector con la posición de cada elemento, si cambiamos el argumento de decreasing a TRUE entonces el orden será decreciente.</p>
 </div>
 <div id="tabulando-datos" class="section level2">
@@ -679,33 +683,33 @@ x*<span class="dv">2</span>; <span class="kw">sqrt</span>(x); x^<span class="dv"
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">list</span> (<span class="dt">a =</span> <span class="kw">rnorm</span>(<span class="dv">10</span>, <span class="dv">4</span>), <span class="dt">b =</span> <span class="kw">rnorm</span>(<span class="dv">10</span>, <span class="dv">12</span>), <span class="dt">c =</span> <span class="kw">rnorm</span>(<span class="dv">10</span>, <span class="dv">25</span>))
 x</code></pre></div>
 <pre><code>## $a
-##  [1] 2.664155 4.596653 3.993670 3.290576 2.704928 3.016821 1.307137
-##  [8] 3.967823 4.142946 4.284901
+##  [1] 1.536030 4.485668 5.778241 3.723231 3.960927 2.785380 2.864630
+##  [8] 3.289244 4.557814 2.542551
 ## 
 ## $b
-##  [1]  9.966693 12.044369 12.911908 12.775173 11.132543 11.722555 11.661238
-##  [8] 13.270768 11.891353 13.891909
+##  [1] 13.80302 12.91937 13.30454 13.33823 12.78817 11.78173 11.80545
+##  [8] 12.42414 11.14982 12.31298
 ## 
 ## $c
-##  [1] 23.67763 23.24359 25.66981 25.84707 24.00385 26.82644 26.23629
-##  [8] 24.21905 25.17232 24.41957</code></pre>
+##  [1] 24.83533 23.76661 26.73295 24.47955 22.91937 24.85529 24.91873
+##  [8] 24.59848 25.64470 22.73718</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sapply</span>(x, mean); <span class="kw">lapply</span>(x, mean)</code></pre></div>
 <pre><code>##         a         b         c 
-##  3.396961 12.126851 24.931563</code></pre>
+##  3.552372 12.562744 24.548820</code></pre>
 <pre><code>## $a
-## [1] 3.396961
+## [1] 3.552372
 ## 
 ## $b
-## [1] 12.12685
+## [1] 12.56274
 ## 
 ## $c
-## [1] 24.93156</code></pre>
+## [1] 24.54882</code></pre>
 <p>Estas funciones nos permiten tener datos resumen de matrices y arreglos, pero puede ser que me interese realizar cálculos condicionados sobre una variable en función de los niveles de un factor, en este caso utilizaremos la función <code>tapply()</code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mercurio &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">55</span>, <span class="fl">0.020</span>, <span class="fl">0.003</span>) 
 
 <span class="kw">tapply</span>(mercurio, cat2, mean)</code></pre></div>
 <pre><code>##       bajo      medio       alto 
-## 0.02107802 0.02076468 0.02008960</code></pre>
+## 0.01986297 0.01881131 0.01897020</code></pre>
 <p>Lo que hacemos es usar el vector factor que generamos antes cat2 y calcular la media de valores de mercurio por cada nivel de contaminación.</p>
 </div>
 <div id="fusionando-datos" class="section level2">
@@ -729,17 +733,17 @@ datos1 &lt;-<span class="st"> </span><span class="kw">merge</span>(bio, abio, <s
 
 <span class="kw">head</span>(datos1, <span class="dv">5</span>); <span class="kw">head</span>(datos, <span class="dv">5</span>)</code></pre></div>
 <pre><code>##   sitio sp1 sp2        N         P
-## 1    a1  91  31 7.419622 0.6776844
-## 2    a2  59  41 7.475140 1.6969104
-## 3    a3  60  34 8.056109 0.3617513
-## 4    a4  46  42 9.226970 1.2532530
-## 5    a5  60  36 9.428904 0.7356293</code></pre>
+## 1    a1  70  19 8.511632 1.1632571
+## 2    a2  84  18 7.134834 2.1990883
+## 3    a3  87  13 9.530167 0.6494586
+## 4    a4  87  26 8.580197 1.2259388
+## 5    a5  63  23 7.380306 1.6502351</code></pre>
 <pre><code>##   sitio sp1 sp2 sitio        N         P
-## 1    a1  91  31    a2 7.475140 1.6969104
-## 2    a2  59  41    a1 7.419622 0.6776844
-## 3    a3  60  34    a5 9.428904 0.7356293
-## 4    a4  46  42    a3 8.056109 0.3617513
-## 5    a5  60  36    a4 9.226970 1.2532530</code></pre>
+## 1    a1  70  19    a2 7.134834 2.1990883
+## 2    a2  84  18    a1 8.511632 1.1632571
+## 3    a3  87  13    a5 7.380306 1.6502351
+## 4    a4  87  26    a4 8.580197 1.2259388
+## 5    a5  63  23    a3 9.530167 0.6494586</code></pre>
 <p>Como podemos ver los dos casos son completamente distintos, el que realmente nos interesa es la opción dos que la obtenemos con la función merge.</p>
 </div>
 </div>

@@ -3,13 +3,13 @@ title: "Introducción a R"
 author: "Carlos Iván Espinosa"
 date: "9 de octubre de 2016"
 output:
-  pdf_document:
-    toc: yes
   html_document:
     fig_caption: yes
     highlight: haddock
     number_sections: yes
     theme: cosmo
+    toc: yes
+  pdf_document:
     toc: yes
 ---
 <p> <br> </p>
@@ -313,14 +313,22 @@ Hemos visto tres formas de generar vectores, una forma que nos permite generar v
 
 __Tabla 1__: Expresiones Lógicas
 
-|Descripción       | Expresión|
-|------------------|----------|
-|Mayor que         | >        |
-|Menor que         | <        |
-|Mayor o igual que | >=       | 
-|Menor o igual que | <=       |
-|Igual que         | ==       |
-|No es igual que   | !=       |
++---------------------+------------+
+|Descripción          | Expresión   |
++=====================+============+
+|Mayor que            |  $>$       |
++---------------------+------------+
+|Menor que            |  $<$       |
++---------------------+------------+
+|Mayor o igual que    |  $>=$      |
++---------------------+------------+
+|Menor o igual que    |  $<=$      |
++---------------------+------------+
+|Igual que            |  $==$      |
++---------------------+------------+
+|No es igual que      |  $!=$      |
++---------------------+------------+
+
 
 
 En el caso de los vectores numéricos y categóricos hemos utilizado secuencia y concatenar, pero podríamos utilizar algunos otras funciones. 
