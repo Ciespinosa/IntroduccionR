@@ -3,13 +3,13 @@ title: "Introducción a R"
 author: "Carlos Iván Espinosa"
 date: "9 de octubre de 2016"
 output:
+  pdf_document:
+    toc: yes
   html_document:
     fig_caption: yes
     highlight: haddock
     number_sections: yes
     theme: cosmo
-    toc: yes
-  pdf_document:
     toc: yes
 ---
 <p> <br> </p>
@@ -54,9 +54,9 @@ Hemos hablado mucho de `R` pero hasta ahora no hemos dicho que es, ¿es un progr
 
 Aunque mucha gente se asusta cuando hablamos de R como un lenguaje de programación, realmente R es un lenguaje bastante simple, el cual está orientado a _Objetos_, por otro lado, a diferencia de otros lenguajes de programación los comandos escritos en el teclado son ejecutados directamente sin necesidad de construir ejecutables.
 
-En R tenemos al menos 3 clases de objetos;  funciones, matrices de datos y resultados.  Cada uno de estos objetos tiene unas características propias.  Las _funciones_ normalmente se encuentran dentro de paquetes, estos objetos traen comandos que me permiten manipular los datos. Accedemos a las funciones a través de comandos. Los _datos_ son matrices o vectores de información los cuales son manipulados por las funciones. Los _resultados_ son objetos resultantes de la manipulación de los datos (Figura 5).
+En R tenemos al menos 3 clases de objetos;  funciones, matrices de datos y resultados.  Cada uno de estos objetos tiene unas características propias.  Las _funciones_ normalmente se encuentran dentro de paquetes, estos objetos traen comandos que me permiten manipular los datos. Accedemos a las funciones a través de comandos. Los _datos_ son matrices o vectores de información los cuales son manipulados por las funciones. Los _resultados_ son objetos resultantes de la manipulación de los datos (Figura 3).
 
-```{r, echo=FALSE, fig.align='center', fig.cap="Figura 5. Esquema del funcionamiento de r. Basado en Paradis 2003", fig.height=4, fig.width=7}
+```{r, echo=FALSE, fig.align='center', fig.cap="Figura 3. Esquema del funcionamiento de r. Basado en Paradis 2003", fig.height=4, fig.width=7}
 
 x <- 1:100
 y <- 1:100 
@@ -117,11 +117,11 @@ El funcionamiento de R se da en la memoria activa, así que cada vez que iniciam
 
 ##Conozcamos rStudio antes de empezar
 
-![Figura 3. Plataforma RStudio](imagen/RStudio.jpg)
+![Figura 4. Plataforma RStudio](imagen/RStudio.jpg)
 
 <p> <br> </p>
 
-Como vemos en la figura 3, RStudio está compuesto por cuatro ventanas.  Seguramente en su caso, si acaba de generar el proyecto le aparecerán únicamente tres ventanas. A continuación describiré cada una de las ventanas.
+Como vemos en la figura 4, RStudio está compuesto por cuatro ventanas.  Seguramente en su caso, si acaba de generar el proyecto le aparecerán únicamente tres ventanas. A continuación describiré cada una de las ventanas.
 
 La __primera ventana__ (la que en su caso seguramente no asoma, izquierda superior) lo constituye documentos que pueden ser de varios tipos. El tipo básico es un documento con extensión __.R__ y que nos sirven para ir guardando el código que vamos construyendo para el análisis.  Vamos abrir un script, esto lo podemos hacer de al menos tres maneras, la primera es ir al menú de la consola seleccionar `File > New File > script`, la segunda forma es seleccionar el icono del documento con una cruz verde ![](imagen/RStudio_nuevo.jpg) y seleccionar `R script`.  La última opción es hacerlo desde el teclado si presionan alt + shift (mayúsculas) y la tecla __N__ obtendrá el mismo resultado.
 
@@ -158,10 +158,10 @@ a. Todos los códigos que ponemos siempre deben ir acompañados de una nota que 
 b. Recuerden siempre colocar sus archivos en una sola carpeta de tal forma que este organizado.
 c. Si está probando cambios en el código, una vez que ha llegado a lo que quiere borre los otros códigos, tenga siempre su código limpio.
 d. Una vez que se escribe el código este puede ser ejecutado desde la consola haciendo clic en la consola en el ícono run ![](imagen/RStudio_Run.jpg) que se encuentra en la parte superior derecha de la ventana del script.  Sin embargo, una mejor forma es tecleando __ctrl__ y __enter__.
-e. Cada vez que iniciamos un nuevo tema en el código podemos poner un título seguido por cuatro guiones medios (- - - -), esto genera en RStudio una estructura que puede ser navegada (Figura 4).
+e. Cada vez que iniciamos un nuevo tema en el código podemos poner un título seguido por cuatro guiones medios (- - - -), esto genera en RStudio una estructura que puede ser navegada (Figura 5).
 
 
-![Figura 4. Estructura del script en RStudio](imagen/estructura.jpg)
+![Figura 5. Estructura del script en RStudio](imagen/estructura.jpg)
 
 
 <p> <br> </p>
