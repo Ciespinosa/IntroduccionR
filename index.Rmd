@@ -14,7 +14,7 @@ output:
 ---
 <p> <br> </p>
 
-Pueden descargar este documento en pdf haciendo clic [aquí](https://github.com/Ciespinosa/introducionR/blob/master/index.pdf)
+Pueden descargar este documento en pdf haciendo clic [aquí](https://github.com/Ciespinosa/IntroduccionR/blob/master/index.pdf)
 
 
 <p> <br> </p>

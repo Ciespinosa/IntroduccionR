@@ -177,7 +177,7 @@ $(document).ready(function () {
 <p>
 <br>
 </p>
-<p>Pueden descargar este documento en pdf haciendo clic <a href="https://github.com/Ciespinosa/introducionR/blob/master/index.pdf">aquí</a></p>
+<p>Pueden descargar este documento en pdf haciendo clic <a href="https://github.com/Ciespinosa/IntroduccionR/blob/master/index.pdf">aquí</a></p>
 <p>
 <br>
 </p>
@@ -638,9 +638,9 @@ x*<span class="dv">2</span>; <span class="kw">sqrt</span>(x); x^<span class="dv"
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">z &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">rnorm</span>(<span class="dv">10</span>, <span class="dv">4</span>, <span class="dv">1</span>), <span class="dv">0</span>)
 
 <span class="kw">sort</span>(z)</code></pre></div>
-<pre><code>##  [1] 2 2 3 4 4 4 4 4 5 5</code></pre>
+<pre><code>##  [1] 2 3 4 4 4 5 5 5 6 6</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">order</span>(z, <span class="dt">decreasing=</span><span class="ot">FALSE</span>)</code></pre></div>
-<pre><code>##  [1]  5  9 10  1  3  6  7  8  2  4</code></pre>
+<pre><code>##  [1]  5  1  3  7  8  2  6  9  4 10</code></pre>
 <p>La diferencia entre estas dos funciones es que sort lo que hace es ordenar la función en orden ascendente. Mientras que order genera un vector con la posición de cada elemento, si cambiamos el argumento de decreasing a TRUE entonces el orden será decreciente.</p>
 </div>
 <div id="tabulando-datos" class="section level2">
@@ -683,33 +683,33 @@ x*<span class="dv">2</span>; <span class="kw">sqrt</span>(x); x^<span class="dv"
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">list</span> (<span class="dt">a =</span> <span class="kw">rnorm</span>(<span class="dv">10</span>, <span class="dv">4</span>), <span class="dt">b =</span> <span class="kw">rnorm</span>(<span class="dv">10</span>, <span class="dv">12</span>), <span class="dt">c =</span> <span class="kw">rnorm</span>(<span class="dv">10</span>, <span class="dv">25</span>))
 x</code></pre></div>
 <pre><code>## $a
-##  [1] 1.536030 4.485668 5.778241 3.723231 3.960927 2.785380 2.864630
-##  [8] 3.289244 4.557814 2.542551
+##  [1] 5.146757 3.066120 4.220973 4.340088 1.214945 2.015320 3.817374
+##  [8] 3.676457 5.639310 1.489084
 ## 
 ## $b
-##  [1] 13.80302 12.91937 13.30454 13.33823 12.78817 11.78173 11.80545
-##  [8] 12.42414 11.14982 12.31298
+##  [1] 12.169289 12.916569 12.528673 12.425280 11.644696 10.705105  9.599419
+##  [8] 11.942637 11.794504 11.274188
 ## 
 ## $c
-##  [1] 24.83533 23.76661 26.73295 24.47955 22.91937 24.85529 24.91873
-##  [8] 24.59848 25.64470 22.73718</code></pre>
+##  [1] 25.09997 23.81341 24.51134 25.42975 27.50726 24.68235 24.66212
+##  [8] 23.74609 23.30924 26.01740</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sapply</span>(x, mean); <span class="kw">lapply</span>(x, mean)</code></pre></div>
 <pre><code>##         a         b         c 
-##  3.552372 12.562744 24.548820</code></pre>
+##  3.462643 11.700036 24.877892</code></pre>
 <pre><code>## $a
-## [1] 3.552372
+## [1] 3.462643
 ## 
 ## $b
-## [1] 12.56274
+## [1] 11.70004
 ## 
 ## $c
-## [1] 24.54882</code></pre>
+## [1] 24.87789</code></pre>
 <p>Estas funciones nos permiten tener datos resumen de matrices y arreglos, pero puede ser que me interese realizar cálculos condicionados sobre una variable en función de los niveles de un factor, en este caso utilizaremos la función <code>tapply()</code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mercurio &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">55</span>, <span class="fl">0.020</span>, <span class="fl">0.003</span>) 
 
 <span class="kw">tapply</span>(mercurio, cat2, mean)</code></pre></div>
 <pre><code>##       bajo      medio       alto 
-## 0.01986297 0.01881131 0.01897020</code></pre>
+## 0.02005786 0.01997545 0.02046635</code></pre>
 <p>Lo que hacemos es usar el vector factor que generamos antes cat2 y calcular la media de valores de mercurio por cada nivel de contaminación.</p>
 </div>
 <div id="fusionando-datos" class="section level2">
@@ -733,17 +733,17 @@ datos1 &lt;-<span class="st"> </span><span class="kw">merge</span>(bio, abio, <s
 
 <span class="kw">head</span>(datos1, <span class="dv">5</span>); <span class="kw">head</span>(datos, <span class="dv">5</span>)</code></pre></div>
 <pre><code>##   sitio sp1 sp2        N         P
-## 1    a1  70  19 8.511632 1.1632571
-## 2    a2  84  18 7.134834 2.1990883
-## 3    a3  87  13 9.530167 0.6494586
-## 4    a4  87  26 8.580197 1.2259388
-## 5    a5  63  23 7.380306 1.6502351</code></pre>
+## 1    a1  71  26 9.286055 1.0211310
+## 2    a2  70  19 7.743986 1.3071449
+## 3    a3  37  49 9.327736 0.9689188
+## 4    a4  57  31 8.277239 0.2309212
+## 5    a5  51  32 5.876675 0.6058496</code></pre>
 <pre><code>##   sitio sp1 sp2 sitio        N         P
-## 1    a1  70  19    a2 7.134834 2.1990883
-## 2    a2  84  18    a1 8.511632 1.1632571
-## 3    a3  87  13    a5 7.380306 1.6502351
-## 4    a4  87  26    a4 8.580197 1.2259388
-## 5    a5  63  23    a3 9.530167 0.6494586</code></pre>
+## 1    a1  71  26    a1 9.286055 1.0211310
+## 2    a2  70  19    a2 7.743986 1.3071449
+## 3    a3  37  49    a3 9.327736 0.9689188
+## 4    a4  57  31    a5 5.876675 0.6058496
+## 5    a5  51  32    a4 8.277239 0.2309212</code></pre>
 <p>Como podemos ver los dos casos son completamente distintos, el que realmente nos interesa es la opción dos que la obtenemos con la función merge.</p>
 </div>
 </div>
