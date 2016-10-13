@@ -3,13 +3,13 @@ title: "Introducción a R"
 author: "Carlos Iván Espinosa"
 date: "9 de octubre de 2016"
 output:
-  pdf_document:
-    toc: yes
   html_document:
     fig_caption: yes
     highlight: haddock
     number_sections: yes
     theme: cosmo
+    toc: yes
+  pdf_document:
     toc: yes
 ---
 <p> <br> </p>
@@ -646,7 +646,8 @@ Como podemos ver los dos casos son completamente distintos, el que realmente nos
  2. Realizar algunas operaciones con los vectores                                   
     - Obtener la cantidad de libras/año de cada persona                            
     - La suma, valor máximo y mínimo, el promedio de los pesos de las mujeres y de los hombres                                                                  
-    - Obtener un vector con los pesos de las mujeres y uno con el de hombres       
+    - Obtener un vector con los pesos de las mujeres y uno con el de hombres  
+    
     - Obtener un vector con los pesos mayores de 115 y menores de 123  
 
 
