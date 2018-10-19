@@ -1,7 +1,7 @@
 ---
 title: "Introducción a R"
 author: "Carlos Iván Espinosa"
-date: "9 de octubre de 2016"
+date: "10 de octubre de 2018"
 output:
   html_document:
     fig_caption: yes
@@ -23,7 +23,7 @@ Pueden descargar este documento en pdf haciendo clic [aquí](https://github.com/
 
 -----
 
-El primer paso será instalar `R` y `RStudio`, aunque existen muchas plataformas para trabajar con `R`, `RStudio` ofrece algunas ventajas por las que seleccionamos esta plataforma.  
+El primer paso será instalar `R` y `RStudio`, aunque existen muchas plataformas para trabajar con `R`, `RStudio` ofrece algunas ventajas que las analizaremos más adelante por las que seleccionamos esta plataforma.  
 
 Para instalar `R` ingresa en la página web de [r-project](https://cran.r-project.org/bin/windows/base/). Una vez en esta página selecciona descargar (Figura 1).  Sigue los pasos para terminar la instalación.
 
@@ -41,8 +41,7 @@ La instalación de `RStudio` es similar a R debe ingresar en la página de [RStu
 
 <p> <br> </p>
 
-
-Una vez que hemos instalado R y RStudio podremos trabajar con los datos. 
+Una vez que hemos instalado R y RStudio podremos trabajar con los datos. Una cosa importante es que RStudio no puede funcionar si no hemos descargado R, así que asegúrate de descargar los dos programas. Trabajaremos en RStudio así que no es necesario que despliegue R.
 
 >"El uso de comandos exige una curva de aprendizaje mayor que el requerido por las interfaces gráficas, pero las ganancias en términos de independencia, creatividad y control no son comparables. Escribir un código supone una comprensión más profunda de aquello que se desea aplicar" (Elousa 2011).
 
@@ -50,11 +49,11 @@ Una vez que hemos instalado R y RStudio podremos trabajar con los datos.
 
 -----
 
-Hemos hablado mucho de `R` pero hasta ahora no hemos dicho que es, ¿es un programa?, no realmente no es un programa es un entorno de programación. R es considerado un dialecto del lenguaje _S_ el cual fue desarrollado por los  Laboratorios AT&T Bell.  
+Hemos hablado mucho de `R` pero hasta ahora no hemos dicho que es, ¿es un programa?, no, realmente no es un programa, es un entorno de programación. R es considerado un dialecto del lenguaje _S_ el cual fue desarrollado por los Laboratorios AT&T Bell.  
 
-Aunque mucha gente se asusta cuando hablamos de R como un lenguaje de programación, realmente R es un lenguaje bastante simple, el cual está orientado a _Objetos_, por otro lado, a diferencia de otros lenguajes de programación los comandos escritos en el teclado son ejecutados directamente sin necesidad de construir ejecutables.
+Aunque mucha gente se asusta cuando hablamos de R como un lenguaje de programación, la realidad es que R es un lenguaje bastante simple. Este lenguaje está orientado a _Objetos_, por otro lado, a diferencia de otros lenguajes de programación los comandos escritos en el teclado son ejecutados directamente sin necesidad de construir ejecutables.
 
-En R tenemos al menos 3 clases de objetos;  funciones, matrices de datos y resultados.  Cada uno de estos objetos tiene unas características propias.  Las _funciones_ normalmente se encuentran dentro de paquetes, estos objetos traen comandos que me permiten manipular los datos. Accedemos a las funciones a través de comandos. Los _datos_ son matrices o vectores de información los cuales son manipulados por las funciones. Los _resultados_ son objetos resultantes de la manipulación de los datos (Figura 3).
+En R tenemos al menos tres grandes categorías de objetos; funciones, datos y resultados.  Cada una de estas tiene unas características propias.  Las _funciones_ normalmente se encuentran dentro de paquetes, estos objetos traen comandos que me permiten manipular los datos. Accedemos a las funciones a través de comandos. Los _datos_ son matrices o vectores de información los cuales son manipulados por las funciones. Los _resultados_ son objetos resultantes de la manipulación de los datos (Figura 3).
 
 ```{r, echo=FALSE, fig.align='center', fig.cap="Figura 3. Esquema del funcionamiento de r. Basado en Paradis 2003", fig.height=4, fig.width=7}
 
@@ -107,9 +106,9 @@ arrows(37, 48, 60, 20, length=0.08,angle=30,lwd=2)
 
 ```
 
-El funcionamiento de R se da en la memoria activa, así que cada vez que iniciamos a trabajar con R es necesario llamar los datos desde el disco duro a la memoria activa.  Para llamar paquetes (donde tenemos las funciones) normalmente utilizamos la función `library`, mientras que para llamar los datos utilizamos funciones como `read.table`. Algunas veces nos interesa grabar un resultado desde la memoria activa al disco duro para esto podemos utilizar funciones como `write.table`. Finalmente, no todos los paquetes disponibles se bajan cuando instalamos R, de hecho solo se baja un paquete conocido como paquete base. Cuando se necesita un nuevo paquete, este debe llamarse desde internet, para ello utilizamos la función ìnstall.packages`. Existe un repositorio de todos los paquetes disponibles (Comprehensive R Archive Network, __CRAN__) y varios países tienen espejos de estos repositorios (espejos CRAN) a partir de los cuales podemos descargar los paquetes.
+El funcionamiento de R se da en la memoria activa, así que cada vez que iniciamos a trabajar con R es necesario llamar los datos desde el disco duro a la memoria activa.  Para llamar paquetes (donde tenemos las funciones) normalmente utilizamos la función `library`, mientras que para llamar los datos utilizamos funciones como `read.table`. Algunas veces nos interesa grabar un resultado desde la memoria activa al disco duro para esto podemos utilizar funciones como `write.table`. Finalmente, no todos los paquetes disponibles se bajan cuando instalamos R, de hecho, solo se baja un paquete conocido como paquete base. Cuando se necesita un nuevo paquete, este debe llamarse desde internet, para ello utilizamos la función `install.packages`. Existe un repositorio de todos los paquetes disponibles (Comprehensive R Archive Network, __CRAN__) y varios países tienen espejos de estos repositorios (espejos CRAN) a partir de los cuales podemos descargar los paquetes.
 
->Es muy importante que antes de empezar a trabajar con R seamos conscientes de cómo funciona, esto facilitará entender lo que está haciendo.
+>Es muy importante que antes de empezar a trabajar con R seamos conscientes de cómo funciona, esto facilitará entender lo que está haciendo cuando introduce un código.
 
 #Los primeros pasos
 
@@ -121,13 +120,13 @@ El funcionamiento de R se da en la memoria activa, así que cada vez que iniciam
 
 <p> <br> </p>
 
-Como vemos en la figura 4, RStudio está compuesto por cuatro ventanas.  Seguramente en su caso, si acaba de generar el proyecto le aparecerán únicamente tres ventanas. A continuación describiré cada una de las ventanas.
+Como vemos en la figura 4, RStudio está compuesto por cuatro ventanas.  Seguramente en su caso, si acaba de generar el proyecto le aparecerán únicamente tres ventanas. A continuación, describiré cada una de las ventanas.
 
 La __primera ventana__ (la que en su caso seguramente no asoma, izquierda superior) lo constituye documentos que pueden ser de varios tipos. El tipo básico es un documento con extensión __.R__ y que nos sirven para ir guardando el código que vamos construyendo para el análisis.  Vamos abrir un script, esto lo podemos hacer de al menos tres maneras, la primera es ir al menú de la consola seleccionar `File > New File > script`, la segunda forma es seleccionar el icono del documento con una cruz verde ![](imagen/RStudio_nuevo.jpg) y seleccionar `R script`.  La última opción es hacerlo desde el teclado si presionan alt + shift (mayúsculas) y la tecla __N__ obtendrá el mismo resultado.
 
 Existen otros muchos archivos que podemos cargar, pero por ahora este es suficiente.
 
-La __segunda ventana__ (derecha superior), esta ventana se verán todos los objetos que iremos cargando durante el trabajo en RStudio por ahora esta ventana estará vacía.  
+La __segunda ventana__ (derecha superior), esta ventana se verán todos los objetos que iremos cargando o generando durante el trabajo en RStudio por ahora esta ventana estará vacía.  
 
 >Vamos a generar algunos objetos y ver lo que pasa.
 
@@ -138,27 +137,42 @@ matriz<- matrix(1:20, 5,4)
 
 ```
 
-Ahora podemos ver los objetos creados, algunos salen como valores y la matriz sale como datos.  Los objetos que son datos, puedo abrirlos para ver su estructura.  Si hacen clic en el nombre matriz verán que se abre una nueva hoja en la primera ventana que corresponde a estos datos.
+Ahora podemos ver los objetos creados, algunos salen como valores y la matriz sale como datos.  Los objetos pueden ser abiertos para ver su estructura.  Si hacen clic en el nombre matriz verán que se abre una nueva hoja en la primera ventana que corresponde a estos datos.
 
-La __tercera columna__ (izquierda abajo), corresponde a la consola de R, esta es la consola donde se ejecutarán todos los códigos y se realizarán los análisis.
+La __tercera columna__ (izquierda abajo), corresponde a la consola de R, esta es la consola donde se ejecutarán todos los códigos y se realizarán los análisis. Esta ventana es R. RStudio incorpora a R dentro de su ejecución, por lo que si no hemos instalado R esta ventana no aparecerá. 
 
-La _cuarta columna__ (derecha abajo), en esta ventana tenemos varias pestañas.  La primera `File` nos muestra todos los archivos que están en la carpeta de mi proyecto. La siguiente pestaña `Plots` en esta se verán los gráficos que iré realizando. La pestaña `Help` puede ser usada para pedir ayuda de algún paquete o función que me interese.
+La __cuarta columna__ (derecha abajo), en esta ventana tenemos varias pestañas.  La primera `File` nos muestra todos los archivos que están en la carpeta de mi proyecto. Pueden ser archivos de datos, gráficos generados o el script de R que estoy generando. La siguiente pestaña `Plots` mostrará los gráficos que va ejecutando en R. La pestaña `Help` puede ser usada para pedir ayuda de algún paquete o función que necesite usar y no esté claro de cómo hacerlo.
 
 Bueno ya conocemos RStudio ahora si a trabajar.
 
-##¿Cómo trabajar en RStudio?
+## Primer Paso: Crear un proyecto
 
-El trabajo de programación requiere que seamos muy ordenados en lo que hacemos, es por esto que considero que el trabajar con RStudio nos ofrece una ventaja.  Con RStudio podemos generar proyectos que nos permitirán tener nuestra información organizada (puedes acceder a este [enlace](https://ciespinosa.github.io/cargarDatos/) si quieren saber cómo crear un nuevo proyecto). 
+El trabajo de programación requiere que seamos muy ordenados, es por esto que considero que el trabajar con RStudio nos ofrece algunas ventajas que nos facilitan el trabajar ordenadamente.  
 
-Si bien podemos trabajar directamente en la consola, lo mejor es que desde el principio nos acostumbremos a generar scripts donde tengamos la información limpia y podamos siempre saber lo que estamos haciendo.
+A continuación, les presentaré una serie de pasos que deben seguir para crear un nuevo proyecto en RStudio.
+
+1. Abrir RStudio
+2. Hacer clic en `file` y seleccionar new `Project`
+3. En la nueva ventana que se abrió podemos seleccionar de entre tres opciones, puesto que aún no estamos trabajando con versiones de control, por ahora podemos seleccionar entre nuevo directorio `New Directory` o un directorio existente `Existing Directory`.
+
+Si seleccionamos `New Directory`(nuevo directorio) se generará una nueva carpeta en la ubicación que querramos, en esta carpeta podremos poner todos los datos y demás información con la cual trabajaremos. Cuando seleccionamos `Existing Directory` (un (directorio existente) RStudio generará un proyecto dentro de una carpeta que ya exista en el computador.  Por organización, siempre que estoy iniciando un nuevo proyecto prefiero crear un nuevo directorio en el cual colocaré únicamente lo que voy a utilizar en los análisis.
+
+4. Si hemos elegido `New Directory` tendremos dos casilleros, el primero indica el nombre que le vamos a poner a la carpeta `Directory Name` y el segundo nos indica donde alojaremos esa carpeta `browse`.
+
+5. Si hemos elegido `Existing Directory`, la siguiente ventana nos permite decir cuál es la carpeta que quiero enlazar. Hacer clic en `browse`  buscar la carpeta donde colocaré el proyecto y aceptar.
+
+
+## Segundo Paso: Los códigos usados
+
+Si bien podemos trabajar directamente en la consola de R ejecutando los códigos, lo mejor es que desde el principio nos acostumbremos a generar scripts donde tengamos la información limpia y podamos siempre saber lo que estamos haciendo. Un Script es un archivo donde tendremos los códigos de R, referenciados y organizados.
 
 __Algunos consejos iniciales__
 
 a. Todos los códigos que ponemos siempre deben ir acompañados de una nota que explique lo que están haciendo. La nota debe estar precedida por __#__, con lo cual R no lee esta parte como código (Figura 4). 
-b. Recuerden siempre colocar sus archivos en una sola carpeta de tal forma que este organizado.
+b. Recuerden siempre colocar sus archivos en la carpeta del proyecto que generaron en el primer paso.
 c. Si está probando cambios en el código, una vez que ha llegado a lo que quiere borre los otros códigos, tenga siempre su código limpio.
 d. Una vez que se escribe el código este puede ser ejecutado desde la consola haciendo clic en la consola en el ícono run ![](imagen/RStudio_Run.jpg) que se encuentra en la parte superior derecha de la ventana del script.  Sin embargo, una mejor forma es tecleando __ctrl__ y __enter__.
-e. Cada vez que iniciamos un nuevo tema en el código podemos poner un título seguido por cuatro guiones medios (- - - -), esto genera en RStudio una estructura que puede ser navegada (Figura 5).
+e. Cada vez que iniciamos un nuevo tema en el código podemos poner un título seguido por cuatro guiones medios (- - - -), esto genera en RStudio una estructura de índice que puede ser navegada (Figura 5 círculo rojo abajo a la izquierda).
 
 
 ![Figura 5. Estructura del script en RStudio](imagen/estructura.jpg)
@@ -166,13 +180,13 @@ e. Cada vez que iniciamos un nuevo tema en el código podemos poner un título s
 
 <p> <br> </p>
 
+>Es importante que sea organizado en la ejecución de los códigos, siga los consejos y podrá mantener un código limpio y facil de acceder y revisar.
 
 #Los objetos
 
 -----
 
-Como lo vimos en el anterior apartado R opera sobre  objetos y estos objetos pueden ser diversos. Los diferentes tipos de objetos poseen unas determinadas características de estructura, en el entorno R el tipo de objeto se conoce como modo (mode) y las características como atributos. Si quiero saber cuáles son los objetos que tengo en la consola necesito utilizar la función `ls()`.
-
+Como lo vimos en el anterior apartado R opera sobre objetos y estos objetos pueden ser diversos. Los diferentes tipos de objetos poseen unas determinadas características de estructura, en el entorno R el tipo de objeto se conoce como modo (mode) o clase (class). 
 Cuando estoy generado un objeto, es necesario darle una denominación, un nombre, y asignarle a este unos datos. En R la función de asignación es `<-`. 
 
 ```{r}
@@ -195,7 +209,7 @@ notas
 
 ¿Qué es lo que sucedió? 
 
-R diferencia entre letras mayúsculas y minúsculas por lo que es necesario poner exactamente el nombre.  En el caso del ejemplo, Notas no es igual que notas.  Volvamos a intentar.
+Para R los nombres no son entendidos como palabras sino como una serie de símbolos, por tanto la "N" no es lo mismo que la "n", por lo que es necesario poner exactamente el nombre.  En el caso del ejemplo, Notas no es igual que notas.  Volvamos a intentar.
 
 ```{r, echo= FALSE}
 Notas <- c(rep(10,5), rep(7,3), rep(8.5, 12))
@@ -205,14 +219,14 @@ Notas
 ```
 Ahora si podemos ver que tenemos un curso muy aplicado.
 
-A continuación vamos a realizar un pequeño programa que nos ayude a entender como los objetos pueden ser operados a través de comandos. Haremos un seguimiento de los costos de un producto.  Mi hija María Sol tiene un pequeño negocio de chocolates vamos a utilizar lo que ella hace para ver lo potente que es R.
+A continuación, vamos a realizar un pequeño programa que nos ayude a entender como los objetos pueden ser operados a través de comandos. Haremos un seguimiento de los costos de un producto.  Mi hija María Sol tiene un pequeño negocio de chocolates vamos a utilizar lo que ella hace para ver lo potente que es R.
 
 Para hacer los chocolates ella usa los siguientes ingredientes:
 
-- Chocolate
-- Nuez
-- Dulce de leche
-- Empaques
+- Chocolate (Choco)
+- Nuez 
+- Dulce de leche (D.leche)
+- Empaques (Empa)
 
 Necesitamos saber cuál es el costo por chocolate y poder calcular una ganancia.
 
@@ -222,39 +236,40 @@ Nuez <- 2.5 #rinde 40 chocolates
 D.leche <- 2 #rinde 50 chocolates
 Empa <- 0.10 #por cada chocolate
 
-#¿cuánto cuesta cada chocolate
+#¿Cuánto cuesta cada chocolate?
 
 costo <- (Choco/60)+(Nuez/40)+(D.leche/50)+Empa
 costo
 
-#Cuanto debo sumar si quiero ganar el 30%
+#¿Cuanto debo sumar si quiero ganar el 30%?
 
 ganancia <- costo*0.3
 ganancia
 
-#Cuánto cuesta el chocolate
+#¿Cuánto cuesta cada chocolate?
 
 pvp<- costo+ganancia
 pvp
 
-# Cuantos chocolates debo vender si quiero ganar 100 USD mensuales
+#¿Cuantos chocolates debo vender si quiero ganar 100 USD mensuales?
 
 venta<- 100/ganancia
 venta
 
 ```
 
+Bueno como ven R es muy potente y podremos hacer muchas cosas, espero que al menos se den cuenta que cada uno de los objetos pueden ser operados, en este caso a los objetos los hemos multiplicado, dividido o sumado.  Verán más adelante que las operaciones pueden ser mucho más complejas.
 
 ##Tipos de Objetos
 
-Los objetos pueden tener varios tipos (mode) y estos se diferencian por el tipo de datos por los que están conformados. Los objetos más comunes son los objetos dobles, enteros, lógicos y carácter.
+Los objetos pueden tener varios tipos (typeof) y estos se diferencian por el tipo de datos por los que están conformados. Los objetos más comunes son los objetos dobles, enteros, lógicos y carácter.
  
 Veamos un ejemplo de este tipo de objetos.
 
 ```{r}
 
 d <- 3.5
-e <- 8
+e <- 8L
 l <- e>d
 c <- "a"
 
@@ -275,17 +290,33 @@ is.character(d); is.character(l); is.character(c)
 
 ```
 
-Como vemos cada uno de estos objetos son diferentes. Los objetos dobles (double) están formados por datos continuos, mientras que los enteros (integer) están formados por datos de tipo conteo. Los objetos lógicos se dan luego de una operación lógica.
+Como vemos cada uno de estos objetos son diferentes. Los objetos dobles (double) están formados por datos continuos, mientras que los enteros (integer) están formados por datos de tipo conteo. Finalmente, los objetos lógicos se dan luego de una operación lógica. Podemos preguntar directamente el tipo de datos que tiene el objeto con la función _typeof_
+
+```{r}
+typeof(d); typeof(l); typeof(c)
+```
+
 
 ##Estructura de los objetos
 
-Los datos en R pueden organizarse dentro de algunos tipos de estructuras, desde las más sencillas como vectores hasta las más complejas que es una función.  A continuación vamos a describir varios de los objetos que pueden generarse en R, como son; Vector, Factor, Matriz, Array, Marco de Datos, Lista
-y Función.
+La estructura de base de datos en R puede ser descrita en base de su dimensionalidad y en base a su constitución. Los objetos pueden tener una, dos o n dimensiones, y pueden ser homogéneos o heterogéneos. Como vemos en la siguiente tabla en función de estas dos características podemos tener algunos tipos de estructuras.
+
+
+```{r, echo=FALSE}
+library(knitr)
+xt <- matrix(c("Atomic vector", "Matrix", "Array", "List", "Data frame"),3,2)
+colnames(xt) <- c("Homogéneos", "Heterogéneos")
+rownames(xt) <- c("1d", "2d", "nd")
+
+kable(xt, caption = "Estructura de objetos. Fuente: Wickham, 2014")
+```
+
+Ahora vamos a ver en detalle cada uno de los objetos.
 
 
 ###Vectores (Vectors)
 
-Los vectores son las estructuras más simples de R. Los vectores tienen una sola dimensión, y los elementos que lo constituyen definen el tipo de vector que es, así, si es un vector con números enteros será un vector numérico (integrer), o un vector con letras será un vector de carácter (character).  El vector puede ser desde un solo valor hasta varios miles.
+Los vectores son las estructuras más simples de R. Los vectores tienen una sola dimensión, y los elementos que lo constituyen definen el tipo de vector que es, así, si es un vector con números enteros será un vector numérico (integrer), o un vector con letras será un vector de carácter (character).  El vector puede ser desde un solo valor hasta varios miles, pero debe estar constituido por un solo tipo de elemento.
 
 Veamos algunos ejemplos de vectores.
 
@@ -300,7 +331,7 @@ a;b;c
 
 ```
 
-Cada uno de estos vectores fue generado utilizando diferentes funciones o códigos.  El vector numérico se generó utilizando únicamente una secuencia de datos entre 5 y 12, lo hicimos utilizando los dos puntos, esto nos sirve cuando queremos una secuencia ininterrumpida entre dos números.  Para el vector lógico hemos utilizado operadores lógicos como __igual o mayor que (>=)__, __menor o igual que (<=)__ e, __y (&)__. Finalmente, para generar un vector de carácter hemos utilizado la __concatenación (_c_)__. 
+Cada uno de estos vectores fue generado utilizando diferentes funciones o códigos.  El vector numérico se generó utilizando únicamente una secuencia de datos entre 5 y 12, lo hicimos utilizando los dos puntos, esto nos sirve cuando queremos una secuencia ininterrumpida entre dos números.  Para el vector lógico hemos utilizado operadores lógicos como __igual o mayor que (>=)__, __menor o igual que (<=)__ , __y (&)__. Finalmente, para generar un vector de carácter hemos utilizado la función  __concatenación (_c_)__, esta función permite encadenar varios componentes en un vector.
 
 Veamos el tipo de vector que hemos generado.
 
@@ -309,7 +340,7 @@ mode(a);mode(b);mode(c)
 
 ```
 
-Hemos visto tres formas de generar vectores, una forma que nos permite generar vectores lógicos para lo cual utilizamos expresiones lógicas (en la tabla 1 se pueden ver algunas expresiones y operadores lógicos).  
+Como comentamos los vectores lógicos son generados a partir de expresiones lógicas (en la tabla 1 se pueden ver algunas expresiones y operadores lógicos).  
 
 __Tabla 1__: Expresiones Lógicas
 
@@ -331,7 +362,7 @@ __Tabla 1__: Expresiones Lógicas
 
 
 
-En el caso de los vectores numéricos y categóricos hemos utilizado secuencia y concatenar, pero podríamos utilizar algunos otras funciones. 
+En el caso de los vectores numéricos y categóricos hemos utilizado secuencia y concatenar, pero podríamos utilizar algunas otras funciones. 
 
 ```{r}
 
@@ -354,7 +385,7 @@ repA; repB; repC
 
 ```
 
-Podemos combinar letras y números en un vector, para esto utilizamos la función `paste`.
+Podemos generar un vector de carácter al combinar letras y números en un vector, para esto utilizamos la función `paste`.
 
 ```{r}
 
@@ -367,7 +398,24 @@ pasB <- paste(letters[1:9], rep(1:3, c(3,3,3)), sep="a" )
 pasA; pasB
 ```
 
-Como vemos la función paste lo que pide es los dos vectores que serán unidos y que queremos poner como separación.
+La función _paste_ requiere tres argumentos; los dos vectores que serán unidos y un símbolo de separación. 
+
+Como vemos los vectores deben estar compuestos por un solo tipo de elementos, si un vector tiene más de un tipo de elemento estos son  `coaccionado` al tipo más flexible. De esta forma en un vector que tenga números y una letra, estos pueden ser coaccionado (coerced) a caracteres.
+
+```{r}
+a <- c(2,5,7,5,3, 7, "a")
+typeof(a)
+a
+```
+Como vemos este vector fue convertido en un vector tipo carácter. Los vectores lógicos son coaccionado a 0 y 1 cuando son falso y verdadero.
+
+```{r}
+al <- a=="a"
+al
+
+sum(al)
+```
+Podemos forzar una coerción usando la función  `as.numeric` por ejemplo, para cambiar unos factores a números.  Usaremos  `as.character ` para convertir un vector a caracteres, o  `as.matrix ` para convertir un data frame en una matriz.
 
 ###Factores (Factors)
 
@@ -383,7 +431,7 @@ levels(cat)
 
 ```
 
-La función factor nos permite convertir el vector de caracteres en un factor.  ejecute la primera linea de código y luego el nombre de este objeto, ahora ejecute la segunda línea y luego el nombre del objeto.  ¿Cuál es la diferencia? 
+La función `factor` nos permite convertir el vector de caracteres en un vector factor.  Ejecute la primera línea de código y luego el nombre de este objeto, ahora ejecute la segunda línea y luego el nombre del objeto.  ¿Cuál es la diferencia? 
 
 Efectivamente cuando ejecuta la segunda línea al final aparece una observación: `Levels: alto bajo medio`
 
@@ -418,9 +466,33 @@ xcat<- cut(x, breaks = c(0, 30, 70, 100))
 ```
 lo que hemos hecho es generar tres niveles; el primero entre 0 y 30, el segundo entre 30 y 70 y el tercero entre 70 y 100. 
 
+###Listas
+
+Una lista es una colección ordenada de elementos de distinto tipo. Una lista puede contener otra lista, y de este modo puede utilizarse para construir estructuras de datos arbitrarias. Las listas son utilizadas por R como salidas de las funciones estadísticas.
+
+Las listas al igual que los vectores tienen una sola dimensión, pero a diferencia de los vectores estas pueden estar compuestas por diferentes tipos de elementos.
+
+```{r}
+listA <- list("a", "b", c(1))
+listA
+```
+Como vemos las listas pueden tener una estructura lineal, pero puede estar compuesta por diversos elementos. Incluso la lista puede incluir listas, así se puede generar una estructura de datos jerarquizada.
+
+
+```{r}
+listA <- list(1:5, list(rep(1,3)), list("a", "b", "c", list(rep("a",3))))
+str(listA)
+```
+Para convertir la lista en un vector podemos usar la función `unlist`, lo que vuelve la lista a un vector. Si esta lista contiene elementos de diferente tipo los elementos serán coaccionado.
+
+```{r}
+unlist(listA)
+```
+
+
 ###Matrices (Matrix)
 
-Hasta ahora hemos visto vectores y factores estos dos objetos son unidimensionales. Las matrices tienen dos dimensiones las filas y las columnas. Una característica importante de las matrices es que los datos dentro de las matrices son del mismo tipo (números o caracteres), nunca los dos tipos.
+Hasta ahora hemos visto vectores y listas, dos objetos son unidimensionales, vamos a trabajar con las matrices.  Las matrices tienen dos dimensiones; filas y columnas, y tienen una constitución homogénea, es decir los elementos son del mismo tipo.
 
 ```{r}
 mat <- matrix(1:9, 3, 3, byrow = FALSE)
@@ -429,9 +501,9 @@ mode(mat)
 class(mat)
 ```
 
-Hemos utilizado la función `matrix` para generar una matriz, los argumentos para ejecutar la función son en orden de aparición; datos, los datos que queremos que se escriban en la matriz,  filas y columnas de la matriz y si el llenado es por columnas (byrow = FALSE), o por filas (byrow = TRUE).
+Hemos utilizado la función `matrix` para generar una matriz, los argumentos para ejecutar la función son en orden de aparición; datos, los datos que queremos que se escriban en la matriz, filas y columnas de la matriz y si el llenado es por columnas (byrow = FALSE), o por filas (byrow = TRUE).
 
-Si ya tengo un vector y quiero transformar este vector en matriz puedo utilizar la función `dim`. Utilizaremos el vector x que lo generamos hace un momento
+Otra forma de convertir un vector en matriz es utilizando la función `dim`. Utilizaremos el vector x que lo generamos hace un momento y convertiremos en una matriz de 10x10.
 
 ```{r}
 
@@ -488,183 +560,22 @@ y
 Los argumentos de la función array son: los datos que queremos se escriban en la matriz (1:9), utilizando la función concatenar (c), ponemos el número de filas, el número de columnas y el número de matrices a generar.
 
 
-###Listas
-
-Una lista es una colección ordenada de elementos de distinto tipo. Una lista puede contener otra lista, y de este modo puede utilizarse para construir estructuras de datos arbitrarias. Las listas son utilizadas por R como salidas de las funciones estadísticas.
-
-#Operaciones con los objetos
-
-Una de las enormes ventajas de R es que yo puedo utilizar operadores para modificar los objetos.  Estos operadores pueden ser utilizados para realizar operaciones con los mismos vectores.
-
-```{r}
-x <- 1:20
-x*2; sqrt(x); x^3
-
-```
-
-Existen algunas funciones que nos permiten tener información sobre el vector.
-
-```{r}
-
-sum(x) #nos devuelve la suma del vector
-length(x) #nos devuelve el largo del vector
-max(x) #nos devuelve el valor máximo del vector
-min(x) #nos devuelve el valor mínimo del vector
-median (x) #nos devuelve la mediana del vector
-mean(x) #nos devuelve la media del vector
-quantile(x) #nos devuelve los cuartiles del vector
-range (x)  #nos devuelve el rango del vector
-sd (x) #nos devuelve la desviación estándar del error
-
-y <- rep(c(25, 15, 5), 10)
-
-unique(y) #nos devuelve un vector con valores únicos
-duplicated(y) #nos devuelve un vector lógico indicándonos   si el elemento esta duplicado.
-
-```
-
-##Ordenando vectores
-
-Muchas veces nos interesa ordenar un vector para esto podemos utilizar dos funciones; `order` y `sort`
-
-```{r}
-
-z <- round(rnorm(10, 4, 1), 0)
-
-sort(z)
-order(z, decreasing=FALSE)
-
-```
-
-La diferencia entre estas dos funciones es que sort lo que hace es ordenar la función en orden ascendente. Mientras que order genera un vector con la posición de cada elemento, si cambiamos el argumento de decreasing a TRUE entonces el orden será decreciente.
-
-##Tabulando datos
-
-Las variables categóricas nos pueden servir para tabular datos.  Vamos utilizar el objeto que generamos antes _cat3_ y _cat2_ para generar una tabla con la frecuencia por cada nivel.
-
-```{r}
-table(cat3)
-table(cat2)
-```
-Como vemos la función `table` nos permite ver las frecuencias de cada nivel. Pero podríamos utilizar esta función para hacer una tabla de contingencia entre ambas variables.
-
-```{r}
-table(cat2, cat3)
-
-```
-Pero nos podría interesar no tener un dato de frecuencias sino de proporciones, para esto podemos utilizar la función `prop.table`.
-
-```{r}
-x <- table(cat2, cat3)
-prop.table(x,2)
-
-```
-La función prop.table funciona sobre un arreglo o tabla, el segundo argumento indica si la proporción la queremos por filas(1), columnas (2) 
-
-##Funciones apply
-
-Las funciones de la familia apply son de las funciones más utilizadas para manipular los datos.  Vamos a ver algunas de estas funciones.
-
-
-```{r}
-a <- matrix(1:12, 3,4)
-
-apply (a, 2, sum) 
-
-```
-
-
-La función `apply` nos permite obtener valores de una matriz usando funciones resumen. En este caso lo que hacemos es obtener la suma de las columnas.  La función apply requiere los siguientes argumentos; una matriz sobre la que se ejecutará una función (a), indicar si esta función queremos que la ejecute por filas (1), o por columnas (2), la función de resumen que queremos obtener, podemos utilizar todas las funciones que vimos para los vectores.
-
-La función apply() se puede ejecutar sobre una matriz, pero si tenemos una lista y queremos aplicar funciones resumen debemos ocupar funciones como `lapply()` o `sapply()`. La diferencia de estas dos funciones es que cuando usamos lapply() el resultado es una lista, y si usamos sapply() el resultado  es un vector.
-
-
-```{r}
-x <- list (a = rnorm(10, 4), b = rnorm(10, 12), c = rnorm(10, 25))
-x
-
-sapply(x, mean); lapply(x, mean)
-```
-
-Estas funciones nos permiten tener datos resumen de matrices y arreglos, pero puede ser que me interese realizar cálculos condicionados sobre una variable en función de los niveles de un factor, en este caso utilizaremos la función `tapply()`. 
-
-```{r}
-
-mercurio <- rnorm(55, 0.020, 0.003) 
-
-tapply(mercurio, cat2, mean)
-
-```
-
-Lo que hacemos es usar el vector factor que generamos antes cat2 y calcular la media de valores de mercurio por cada nivel de contaminación.
-
-
-##Fusionando datos
-
-Cuando trabajamos con datos una de las cosas que necesitamos muy a menudo es unir datos o matrices de datos.  Imaginemos que tenemos unos datos de contaminación con datos bióticos y otra por datos abióticos, es posible que nos interese unir estas matrices pero asegurarnos los datos correspondan a cada estación de muestreo.
-
-
-```{r}
-
-bio<- data.frame(paste(rep(letters[1:5],c(5,5,5,5,5)),rep(1:5, 5), sep=""), 
-                 round(rnorm(25, 60, 15), 0),
-                 round(rnorm(25, 30, 10), 0))
-
-colnames(bio) <- c("sitio", "sp1", "sp2")
-
-
-abio<- data.frame(paste(rep(letters[1:5],c(5,5,5,5,5)), rep(sample(1:5, 5), 5), sep=""),
-                    rnorm(25, 8, 1),    
-                    rnorm(25, 1, 0.5))
-colnames(abio) <- c("sitio", "N", "P")
-
-```
-Bueno hemos generado dos matrices con datos bióticos y abióticos. Ahora vamos a unirlos usando dos funciones distintas para ver las diferencias.
-
-```{r}
-datos <- cbind(bio, abio)
-
-datos1 <- merge(bio, abio, by ="sitio")
-
-head(datos1, 5); head(datos, 5)
-
-```
-
-Como podemos ver los dos casos son completamente distintos, el que realmente nos interesa es la opción dos que la obtenemos con la función merge.
-
 #Ejercicios
 
-------
-
- 1. Construir 3 vectores que contengan la siguiente información de 22 individuos:	
- 
-    -	edad: 4 personas de 18 años, 3 personas de 24 años, 6 personas de 30 años		
-	y 9 personas de 35 años (ej. 18, 18, 18 ........)                                              	
-    -	genero: deben estar ordenados masculino, femenino las 22 personas                    	
-    -	peso: un vector que tenga un peso medio de 150 y una desviación de 25          
-                                                                                    
- 2. Realizar algunas operaciones con los vectores                                   
-    - Obtener la cantidad de libras/año de cada persona                            
-    - La suma, valor máximo y mínimo, el promedio de los pesos de las mujeres y de los hombres                                                                  
-    - Obtener un vector con los pesos de las mujeres y uno con el de hombres  
-    
-    - Obtener un vector con los pesos mayores de 115 y menores de 123  
-
-
-3. Con los datos proporcionados calcule lo siguiente:
-
-
-     - Convertir el vector provincias en niveles
-     - Obtenga datos de suma (sum), desviación estándar (sd),valores máximos (max) o mínimos (min) y conteo (length), por cada una de las provincias.
-
-
-
-```
-provincia <- c("loj", "azu", "zam", "mor", "mor", "oro", "gua", "gua",
-               "zam", "can", "mor", "can", "zam", "zam", "azu", "loj", "azu", "oro", 
-               "gua", "can", "zam", "mor", "mor", "gua", "azu", "rios", "mor", "can", "can", "rios")
-
-ingresos <- c(60, 49, 40, 61, 64, 60, 59, 54, 62, 69, 70, 42, 
-              56, 61, 61, 61, 58, 51, 48, 65, 49, 49, 41, 48, 52, 46, 59, 46, 58, 43)
-```
+1. Genere un proyecto con el nombre "Trabajo 1_Nombre".
+2. Abra un script y llámele "resolución de ejercicios".
+3. Genere una estructura de índices del Script. Esta estructura debería tener referenciar la pregunta 4 hasta el final de las preguntas de este ejercicio.
+4. Genere los siguientes vectores:
+ - Un vector con datos de edad de los estudiantes del aula.
+ - Un vector con la altura de los estudiantes del aula.
+ - Un vector con el género de los estudiantes del aula.
+ - Un vector para conocer aquellos estudiantes mayores de 25
+Responda:
+¿Qué tipo de vectores hemos generado?
+¿Cuantos estudiantes mayores a 25 años hay en el aula?
+5. Genere una lista con el vector de edad y género. Vuelva a convertir en vector. El vector resultante es numérico o carácter?
+6. Genere 3 categorías de edad, entre 18 y 20, entre 20 y 25 y mayores de 25. Nombre a cada categoría; jovenes, adultos y maduros. Para poner el nombre use la función `levels` para asignar los nombres. Cambie la edad de referencia a "adultos", modifique el orden de las categorías para que aparezca primero maduro, luego adulto y finalmente joven.
+7. Genere una matriz con los datos numéricos de los vectores antes generados.
+8. Genere una data frame con los vectores numéricos y caracteres.
+9. Convierta el data frame en una matriz  y verifique que tipo de elementos constituyen esta matriz.
 
