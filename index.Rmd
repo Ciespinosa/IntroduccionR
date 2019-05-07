@@ -1,15 +1,15 @@
 ---
-title: "Introducción a R"
-author: "Carlos Iván Espinosa"
+title: "IntroducciÃ³n a R"
+author: "Carlos IvÃ¡n Espinosa"
 date: "10 de mayo 2019"
 output:
+  pdf_document:
+    toc: yes
   html_document:
     fig_caption: yes
     highlight: haddock
     number_sections: yes
     theme: cosmo
-    toc: yes
-  pdf_document:
     toc: yes
 ---
 <p> <br> </p>
@@ -23,7 +23,7 @@ Pueden descargar este documento en pdf haciendo clic [aquí](https://github.com/
 
 -----
 
-El primer paso será instalar `R` y `RStudio`, aunque existen muchas plataformas para trabajar con `R`, `RStudio` ofrece algunas ventajas que las analizaremos más adelante por las que seleccionamos esta plataforma.  
+El primer paso será instalar `R` y `RStudio`, aunque existen muchas plataformas para trabajar con `R`, `RStudio` ofrece algunas ventajas que las analizaremos más adelante por las que seleccionamos esta plataforma para trabajar.  
 
 Para instalar `R` ingresa en la página web de [r-project](https://cran.r-project.org/bin/windows/base/). Una vez en esta página selecciona descargar (Figura 1).  Sigue los pasos para terminar la instalación.
 
@@ -41,7 +41,7 @@ La instalación de `RStudio` es similar a R debe ingresar en la página de [RStu
 
 <p> <br> </p>
 
-Una vez que hemos instalado R y RStudio podremos trabajar con los datos. Una cosa importante es que RStudio no puede funcionar si no hemos descargado R, así que asegúrate de descargar los dos programas. Trabajaremos en RStudio así que no es necesario que despliegue R.
+Una vez que hemos instalado R y RStudio podremos trabajar con los datos. Una cosa importante es que RStudio no puede funcionar si no hemos descargado R, así que se debe asegurar descargar los dos programas. Trabajaremos en RStudio así que no es necesario que despliegue R.
 
 >"El uso de comandos exige una curva de aprendizaje mayor que el requerido por las interfaces gráficas, pero las ganancias en términos de independencia, creatividad y control no son comparables. Escribir un código supone una comprensión más profunda de aquello que se desea aplicar" (Elousa 2011).
 
@@ -55,11 +55,11 @@ Una vez que hemos instalado R y RStudio podremos trabajar con los datos. Una cos
 
 Como vemos en la figura 4, RStudio está compuesto por cuatro ventanas.  Seguramente en su caso, si acaba de generar el proyecto le aparecerán únicamente tres ventanas. A continuación, describiré cada una de las ventanas.
 
-La __primera ventana__ (la que en su caso seguramente no asoma, izquierda superior) lo constituye documentos que pueden ser de varios tipos. El tipo básico es un documento con extensión __.R__ y que nos sirven para ir guardando el código que vamos construyendo para el análisis.  Vamos abrir un script, esto lo podemos hacer de al menos tres maneras, la primera es ir al menú de la consola seleccionar `File > New File > script`, la segunda forma es seleccionar el icono del documento con una cruz verde ![](imagen/RStudio_nuevo.jpg) y seleccionar `R script`.  La última opción es hacerlo desde el teclado si presionan alt + shift (mayúsculas) y la tecla __N__ obtendrá el mismo resultado.
+La __primera ventana__ (la que en su caso seguramente no asoma, izquierda superior) lo constituye documentos que pueden ser de varios tipos. El tipo básico es un documento con extensión __.R__, el cual sirven para guardar el código desarrollado para el análisis.  Vamos abrir un script, esto lo podemos hacer de al menos tres maneras, la primera es ir al menú de la consola seleccionar `File > New File > script`, la segunda forma es seleccionar el icono del documento con una cruz verde ![](imagen/RStudio_nuevo.jpg) y seleccionar `R script`.  La última opción es hacerlo desde el teclado si presionan alt + shift (mayúsculas) y la tecla __N__ obtendrá el mismo resultado.
 
-Existen otros muchos archivos que podemos cargar, pero por ahora este es suficiente.
+Existen otros muchos archivos que podemos cargar, pero por ahora veremos solo este.
 
-La __segunda ventana__ (derecha superior), esta ventana se verán todos los objetos que iremos cargando o generando durante el trabajo en RStudio por ahora esta ventana estará vacía.  
+La __segunda ventana__ (derecha superior), esta ventana se verán todos los objetos que iremos cargando o generando durante el trabajo en RStudio por ahora esta ventana estará vacía. Esta ventana nos muestra la memoria activa de R, lo que en un computador se conoce como la memoria RAM.
 
 >Vamos a generar algunos objetos y ver lo que pasa.
 
@@ -74,7 +74,7 @@ Ahora podemos ver los objetos creados, algunos salen como valores y la matriz sa
 
 La __tercera columna__ (izquierda abajo), corresponde a la consola de R, esta es la consola donde se ejecutarán todos los códigos y se realizarán los análisis. Esta ventana es R. RStudio incorpora a R dentro de su ejecución, por lo que si no hemos instalado R esta ventana no aparecerá. 
 
-La __cuarta columna__ (derecha abajo), en esta ventana tenemos varias pestañas.  La primera `File` nos muestra todos los archivos que están en la carpeta de mi proyecto. Pueden ser archivos de datos, gráficos generados o el script de R que estoy generando. La siguiente pestaña `Plots` mostrará los gráficos que va ejecutando en R. La pestaña `Help` puede ser usada para pedir ayuda de algún paquete o función que necesite usar y no esté claro de cómo hacerlo.
+La __cuarta columna__ (derecha abajo), en esta ventana tenemos varias pestañas.  La primera `File` nos muestra todos los archivos que están en la carpeta de mi proyecto, guardados en el disco duro. Pueden ser archivos de datos, gráficos generados o el script de R que estoy generando. La siguiente pestaña `Plots` mostrará los gráficos que va ejecutando en R. La pestaña `Help` puede ser usada para pedir ayuda de algún paquete o función que necesite usar y no esté claro de cómo hacerlo.
 
 Bueno ya conocemos RStudio ahora si a trabajar.
 
@@ -91,9 +91,9 @@ A continuación, les presentaré una serie de pasos que deben seguir para crear 
 
 1. Abrir RStudio
 2. Hacer clic en `file` y seleccionar new `Project`
-3. En la nueva ventana que se abrió podemos seleccionar de entre tres opciones, puesto que aún no estamos trabajando con versiones de control, por ahora podemos seleccionar entre nuevo directorio `New Directory` o un directorio existente `Existing Directory`.
+3. En la nueva ventana que se abrió, podemos seleccionar de entre tres opciones, puesto que aún no estamos trabajando con versiones de control, por ahora podemos seleccionar entre nuevo directorio `New Directory` o un directorio existente `Existing Directory`.
 
-Si seleccionamos `New Directory`(nuevo directorio) se generará una nueva carpeta en la ubicación que querramos, en esta carpeta podremos poner todos los datos y demás información con la cual trabajaremos. Cuando seleccionamos `Existing Directory` (un (directorio existente) RStudio generará un proyecto dentro de una carpeta que ya exista en el computador.  Por organización, siempre que estoy iniciando un nuevo proyecto prefiero crear un nuevo directorio en el cual colocaré únicamente lo que voy a utilizar en los análisis.
+Si seleccionamos `New Directory`(nuevo directorio) se generará una nueva carpeta en la ubicación que querramos, en esta carpeta podremos poner todos los datos y demás información con la cual trabajaremos. Cuando seleccionamos `Existing Directory` (un directorio existente) RStudio generará un proyecto dentro de una carpeta que ya exista en el computador.  Por organización, siempre que estoy iniciando un nuevo proyecto prefiero crear un nuevo directorio en el cual colocaré únicamente los archivos que voy a utilizar en los análisis.
 
 4. Si hemos elegido `New Directory` tendremos dos casilleros, el primero indica el nombre que le vamos a poner a la carpeta `Directory Name` y el segundo nos indica donde alojaremos esa carpeta `browse`.
 
@@ -102,13 +102,13 @@ Si seleccionamos `New Directory`(nuevo directorio) se generará una nueva carpet
 
 ## Segundo Paso: Los códigos usados
 
-Si bien podemos trabajar directamente en la consola de R ejecutando los códigos, lo mejor es que desde el principio nos acostumbremos a generar scripts donde tengamos la información limpia y podamos siempre saber lo que estamos haciendo. Un Script es un archivo donde tendremos los códigos de R, referenciados y organizados.
+Si bien podemos trabajar directamente en la consola de R ejecutando los códigos, lo mejor es que desde el principio nos acostumbremos a generar scripts, donde tengamos la información limpia y podamos saber lo que estamos haciendo. Un Script es un archivo donde tendremos los códigos de R, referenciados y organizados.
 
 __Algunos consejos iniciales__
 
 a. Todos los códigos que ponemos siempre deben ir acompañados de una nota que explique lo que están haciendo. La nota debe estar precedida por __#__, con lo cual R no lee esta parte como código (Figura 4). 
-b. Recuerden siempre colocar sus archivos en la carpeta del proyecto que generaron en el primer paso.
-c. Si está probando cambios en el código, una vez que ha llegado a lo que quiere borre los otros códigos, tenga siempre su código limpio.
+b. Recuerden siempre colocar sus archivos de datos en la carpeta del proyecto que generaron en el primer paso.
+c. Si está probando cambios en el código, una vez que tiene un código que funciona, borre el código con error o que no le funciono, tenga siempre su código limpio.
 d. Una vez que se escribe el código este puede ser ejecutado desde la consola haciendo clic en la consola en el ícono run ![](imagen/RStudio_Run.jpg) que se encuentra en la parte superior derecha de la ventana del script.  Sin embargo, una mejor forma es tecleando __ctrl__ y __enter__.
 e. Cada vez que iniciamos un nuevo tema en el código podemos poner un título seguido por cuatro guiones medios (- - - -), esto genera en RStudio una estructura de índice que puede ser navegada (Figura 5 círculo rojo abajo a la izquierda).
 
@@ -126,9 +126,9 @@ e. Cada vez que iniciamos un nuevo tema en el código podemos poner un título s
 
 Hemos hablado mucho de `R` pero hasta ahora no hemos dicho que es, ¿es un programa?, no, realmente no es un programa, es un entorno de programación. R es considerado un dialecto del lenguaje _S_ el cual fue desarrollado por los Laboratorios AT&T Bell.  
 
-Aunque mucha gente se asusta cuando hablamos de R como un lenguaje de programación, la realidad es que R es un lenguaje bastante simple. Este lenguaje está orientado a _Objetos_, por otro lado, a diferencia de otros lenguajes de programación los comandos escritos en el teclado son ejecutados directamente sin necesidad de construir ejecutables.
+Aunque mucha gente se asusta cuando hablamos de R, como un lenguaje de programación, la realidad es que R es un lenguaje bastante simple, está orientado a _Objetos_. Por otro lado, a diferencia de otros lenguajes de programación los comandos escritos en el teclado, son ejecutados directamente sin necesidad de construir ejecutables.
 
-En R tenemos al menos tres grandes categorías de objetos; funciones, datos y resultados.  Cada una de estas tiene unas características propias.  Las _funciones_ normalmente se encuentran dentro de paquetes, estos objetos traen comandos que me permiten manipular los datos. Accedemos a las funciones a través de comandos. Los _datos_ son matrices o vectores de información los cuales son manipulados por las funciones. Los _resultados_ son objetos resultantes de la manipulación de los datos (Figura 3).
+En R tenemos al menos tres grandes categorías de objetos; funciones, datos y resultados.  Cada una de estas tiene unas características propias.  Las _funciones_ normalmente se encuentran dentro de paquetes, estos objetos traen comandos que permiten manipular los datos. Accedemos a las funciones a través de comandos. Los _datos_ son matrices o vectores de información los cuales son manipulados por las funciones. Los _resultados_ son objetos resultantes de la manipulación de los datos (Figura 3).
 
 ```{r, echo=FALSE, fig.align='center', fig.cap="Figura 3. Esquema del funcionamiento de r. Basado en Paradis 2003", fig.height=4, fig.width=7}
 
@@ -181,7 +181,8 @@ arrows(37, 48, 60, 20, length=0.08,angle=30,lwd=2)
 
 ```
 
-El funcionamiento de R se da en la memoria activa, así que cada vez que iniciamos a trabajar con R es necesario llamar los datos desde el disco duro a la memoria activa.  Para llamar paquetes (donde tenemos las funciones) normalmente utilizamos la función `library`, mientras que para llamar los datos utilizamos funciones como `read.table`. Algunas veces nos interesa grabar un resultado desde la memoria activa al disco duro para esto podemos utilizar funciones como `write.table`. Finalmente, no todos los paquetes disponibles se bajan cuando instalamos R, de hecho, solo se baja un paquete conocido como paquete base. Cuando se necesita un nuevo paquete, este debe llamarse desde internet, para ello utilizamos la función `install.packages`. Existe un repositorio de todos los paquetes disponibles (Comprehensive R Archive Network, __CRAN__) y varios países tienen espejos de estos repositorios (espejos CRAN) a partir de los cuales podemos descargar los paquetes.
+El funcionamiento de R se da en la memoria activa, así que cada vez que iniciamos a trabajar con R es necesario llamar los datos desde el disco duro a la memoria activa.  Para llamar paquetes (donde tenemos las funciones) normalmente utilizamos la función `library`, mientras que para llamar los datos utilizamos funciones como `read.table`. Algunas veces nos interesa grabar un resultado desde la memoria activa al disco duro para esto podemos utilizar funciones como `write.table`. 
+Finalmente, no todos los paquetes disponibles se bajan cuando instalamos R, de hecho, solo se baja un paquete conocido como paquete base. Cuando se necesita un nuevo paquete, este debe llamarse desde internet, para ello utilizamos la función `install.packages`. Existe un repositorio de todos los paquetes disponibles (Comprehensive R Archive Network, __CRAN__) y varios países tienen espejos de estos repositorios (espejos CRAN) a partir de los cuales podemos descargar los paquetes.
 
 >Es muy importante que antes de empezar a trabajar con R seamos conscientes de cómo funciona, esto facilitará entender lo que está haciendo cuando introduce un código.
 
@@ -190,7 +191,7 @@ El funcionamiento de R se da en la memoria activa, así que cada vez que iniciam
 
 -----
 
-Como lo vimos en el anterior apartado R opera sobre objetos y estos objetos pueden ser diversos. Los diferentes tipos de objetos poseen unas determinadas características de estructura, en el entorno R el tipo de objeto se conoce como modo (mode) o clase (class). 
+Como lo vimos en el apartado anterior, R opera sobre objetos y estos objetos pueden ser diversos. Los diferentes tipos de objetos poseen unas determinadas características de estructura, en el entorno R el tipo de objeto se conoce como modo (mode) o clase (class). 
 Cuando estoy generado un objeto, es necesario darle una denominación, un nombre, y asignarle a este unos datos. En R la función de asignación es `<-`. 
 
 ```{r}
@@ -223,7 +224,7 @@ Notas
 ```
 Ahora si podemos ver que tenemos un curso muy aplicado.
 
-A continuación, vamos a realizar un pequeño programa que nos ayude a entender como los objetos pueden ser operados a través de comandos. Haremos un seguimiento de los costos de un producto.  Mi hija María Sol tiene un pequeño negocio de chocolates vamos a utilizar lo que ella hace para ver lo potente que es R.
+A continuación, vamos a realizar un pequeño programa que nos ayude a entender como los objetos pueden ser operados a través de comandos. Haremos un seguimiento de los costos de un producto.  Mi hija María Sol tiene un pequeño negocio de chocolates, vamos a utilizar lo que ella hace para ver lo potente que es R.
 
 Para hacer los chocolates ella usa los siguientes ingredientes:
 
@@ -262,11 +263,11 @@ venta
 
 ```
 
-Bueno como ven R es muy potente y podremos hacer muchas cosas, espero que al menos se den cuenta que cada uno de los objetos pueden ser operados, en este caso a los objetos los hemos multiplicado, dividido o sumado.  Verán más adelante que las operaciones pueden ser mucho más complejas.
+Bueno, como ven R es muy potente y podremos hacer muchas cosas, cada uno de los objetos pueden ser operados, en este caso a los objetos los hemos multiplicado, dividido o sumado. Verán más adelante que las operaciones pueden ser mucho más complejas.
 
 ##Tipos de Objetos
 
-Los objetos pueden tener varios tipos (typeof) y estos se diferencian por el tipo de datos por los que están conformados. Los objetos más comunes son los objetos dobles, enteros, lógicos y carácter.
+Los objetos pueden tener varios tipos (typeof) y estos se diferencian por el tipo de datos (elementos) por los que están conformados. Los objetos más comunes son los objetos dobles, enteros, lógicos y carácter.
  
 Veamos un ejemplo de este tipo de objetos.
 
@@ -280,11 +281,6 @@ c <- "a"
 d;e;l;c
 ```
 Podemos preguntar a R el tipo de objeto con el que estamos trabajando, para esto utilizamos las funciones _is.double, is.integer, is.logical, is.character_
-
-```{r, echo=FALSE, }
-e<-as.integer(e)
-```
-
 
 ```{r}
 is.double(d); is.double(e); is.double(l)
@@ -303,7 +299,7 @@ typeof(d); typeof(l); typeof(c)
 
 ##Estructura de los objetos
 
-La estructura de base de datos en R puede ser descrita en base de su dimensionalidad y en base a su constitución. Los objetos pueden tener una, dos o n dimensiones, y pueden ser homogéneos o heterogéneos. Como vemos en la siguiente tabla en función de estas dos características podemos tener algunos tipos de estructuras.
+La estructura de los objetos en R puede ser descrita en base de su dimensionalidad y en base a su constitución. Los objetos pueden tener una, dos o n dimensiones, y pueden ser homogéneos o heterogéneos. Como vemos en la siguiente tabla en función de estas dos características podemos tener algunos tipos de estructuras.
 
 
 ```{r, echo=FALSE}
@@ -335,7 +331,7 @@ a;b;c
 
 ```
 
-Cada uno de estos vectores fue generado utilizando diferentes funciones o códigos.  El vector numérico se generó utilizando únicamente una secuencia de datos entre 5 y 12, lo hicimos utilizando los dos puntos, esto nos sirve cuando queremos una secuencia ininterrumpida entre dos números.  Para el vector lógico hemos utilizado operadores lógicos como __igual o mayor que (>=)__, __menor o igual que (<=)__ , __y (&)__. Finalmente, para generar un vector de carácter hemos utilizado la función  __concatenación (_c_)__, esta función permite encadenar varios componentes en un vector.
+Cada uno de estos vectores fue generado utilizando diferentes funciones o códigos.  El vector numérico se generó utilizando únicamente una secuencia de datos entre 5 y 12, lo hicimos utilizando los dos puntos, esto nos sirve cuando queremos una secuencia ininterrumpida entre dos números, sin embargo, si queremos tener secuencias con diferentes distancias.  Para el vector lógico hemos utilizado operadores lógicos como __igual o mayor que (>=)__, __menor o igual que (<=)__ , __y (&)__. Finalmente, para generar un vector de carácter hemos utilizado la función  __concatenación (_c_)__, esta función permite encadenar varios componentes en un vector.
 
 Veamos el tipo de vector que hemos generado.
 
@@ -344,12 +340,12 @@ mode(a);mode(b);mode(c)
 
 ```
 
-Como comentamos los vectores lógicos son generados a partir de expresiones lógicas (en la tabla 1 se pueden ver algunas expresiones y operadores lógicos).  
+Como comentamos los vectores lógicos son generados a partir de expresiones lógicas (en la tabla 1 se pueden ver algunos operadores lógicos).  
 
-__Tabla 1__: Expresiones Lógicas
+__Tabla 1__: Operadores Lógicas
 
 +---------------------+------------+
-|Descripción          | Expresión   |
+|Descripción          | Operadores |
 +=====================+============+
 |Mayor que            |  $>$       |
 +---------------------+------------+
@@ -373,15 +369,15 @@ En el caso de los vectores numéricos y categóricos hemos utilizado secuencia y
 secA<- seq(from=10, to=290, by=20)
 secA
 ```
-Aquí hemos utilizado la secuencia entre 10 y 290, pero le hemos dicho que lo haga cada 20 unidades.  R entiende el orden de los datos proporcionados, así que la expresión que acabamos de ejecutar es exactamente igual a: `secA<- seq(10, 290, 20)`
+Aquí hemos utilizado la secuencia entre 10 y 290, pero le hemos dicho que lo haga cada 20 unidades. R entiende el orden de los datos proporcionados, así que la expresión que acabamos de ejecutar es exactamente igual a: `secA<- seq(10, 290, 20)`
 
 Otra de las funciones que se ocupan mucho para la generación de los vectores es la función `rep`.  Esta función permite repetir varias veces un argumento.
 
 
 ```{r}
-repA <- rep(1:5, 3) #Repite el vector de uno a cinco, tres veces 
+repA <- rep(1:5, 3) #Repite la secuencia de uno a cinco, tres veces 
 
-repB <- rep (1:5, c(3,2,7,2,8)) #Repite para cada número del vector las veces  indicado por el vector de repetición.
+repB <- rep (1:5, c(3,2,7,2,8)) #Repite para cada número de la secuencia las veces indicada por el vector de repetición.
 
 repC <- rep(letters[1:3], 3) #Repite las letras de uno a tres, tres veces
 
@@ -397,14 +393,14 @@ pasA <- paste(LETTERS[8:16], 1:8, sep="_")
 
 #Algo más complicado
 
-pasB <- paste(letters[1:9], rep(1:3, c(3,3,3)), sep="a" )
+pasB <- paste(letters[1:9], rep(1:3, 3), sep="a" )
 
 pasA; pasB
 ```
 
 La función _paste_ requiere tres argumentos; los dos vectores que serán unidos y un símbolo de separación. 
 
-Como vemos los vectores deben estar compuestos por un solo tipo de elementos, si un vector tiene más de un tipo de elemento estos son  `coaccionado` al tipo más flexible. De esta forma en un vector que tenga números y una letra, estos pueden ser coaccionado (coerced) a caracteres.
+Como vemos los vectores deben estar compuestos por un solo tipo de elementos, si un vector tiene más de un tipo de elemento estos son  `coaccionados` al tipo más flexible. De esta forma en un vector que tenga números y una letra, estos pueden ser coaccionados (coerced) a caracteres.
 
 ```{r}
 a <- c(2,5,7,5,3, 7, "a")
@@ -423,7 +419,7 @@ Podemos forzar una coerción usando la función  `as.numeric` por ejemplo, para 
 
 ###Factores (Factors)
 
-Los factores es un modo sencillo en que se guardan las variables categóricas. Si tenemos un vector con 50 hombres y 50 mujeres si esta como factor en vez de tener 100 datos lo que tengo es hombres 50 y mujeres 50. Cada categoría se repite una cierta cantidad de veces así R se guarda esta lógica.
+Los factores es un modo sencillo en que se guardan las variables categóricas. Si tenemos un vector con 50 hombres y 50 mujeres, si el vector se encuentra como factor, en vez de tener 100 datos lo que tengo es hombres 50 y mujeres 50. Cada categoría se repite una cierta cantidad de veces.
 
 ```{r}
 
@@ -460,15 +456,16 @@ cat3
 
 ```
 
-Muy bien lo que hemos hecho es transformar los niveles iniciales a dos nuevos niveles. Muchas veces cuando trabajamos con datos nos interesa hacer lo contrario, si tengo datos numéricos transformarlos niveles.  Esto lo podemos hacer con la función `cut`.
+Muy bien lo que hemos hecho es transformar los niveles iniciales a dos nuevos niveles. Muchas veces cuando trabajamos con datos nos interesa hacer lo contrario, los datos numéricos transformarlos a categorias.  Esto lo podemos hacer con la función _cut()_.
 
 ```{r}
 x <- 1:100 # Porcentaje de contaminación
 
-xcat<- cut(x, breaks = c(0, 30, 70, 100))
+xcat <- cut(x, breaks = c(0, 30, 70, 100))
+xcat1 <- cut(x, breaks = c(0, 30, 70, 100), labels=c("bajo", "medio", "alto"))
 
 ```
-lo que hemos hecho es generar tres niveles; el primero entre 0 y 30, el segundo entre 30 y 70 y el tercero entre 70 y 100. 
+Lo que hemos hecho es generar tres niveles; el primero entre 0 y 30, el segundo entre 30 y 70 y el tercero entre 70 y 100. En xcat1 hemos asignado unos nombres a cada una de las nuebas categorias con el argumento _labels_. 
 
 ###Listas
 
@@ -487,7 +484,7 @@ Como vemos las listas pueden tener una estructura lineal, pero puede estar compu
 listA <- list(1:5, list(rep(1,3)), list("a", "b", "c", list(rep("a",3))))
 str(listA)
 ```
-Para convertir la lista en un vector podemos usar la función `unlist`, lo que vuelve la lista a un vector. Si esta lista contiene elementos de diferente tipo los elementos serán coaccionado.
+Para convertir la lista en un vector podemos usar la función `unlist`, lo que vuelve la lista a un vector. Si esta lista contiene elementos de diferente tipo los elementos serán coaccionados.
 
 ```{r}
 unlist(listA)
@@ -496,7 +493,7 @@ unlist(listA)
 
 ###Matrices (Matrix)
 
-Hasta ahora hemos visto vectores y listas, dos objetos son unidimensionales, vamos a trabajar con las matrices.  Las matrices tienen dos dimensiones; filas y columnas, y tienen una constitución homogénea, es decir los elementos son del mismo tipo.
+Hasta ahora hemos visto vectores y listas, dos objetos unidimensionales, vamos a trabajar con las matrices.  Las matrices tienen dos dimensiones; filas y columnas, y tienen una constitución homogénea, es decir los elementos son del mismo tipo.
 
 ```{r}
 mat <- matrix(1:9, 3, 3, byrow = FALSE)
@@ -505,7 +502,7 @@ mode(mat)
 class(mat)
 ```
 
-Hemos utilizado la función `matrix` para generar una matriz, los argumentos para ejecutar la función son en orden de aparición; datos, los datos que queremos que se escriban en la matriz, filas y columnas de la matriz y si el llenado es por columnas (byrow = FALSE), o por filas (byrow = TRUE).
+Hemos utilizado la función `matrix` para generar una matriz, los argumentos para ejecutar la función son en orden de aparición; datos, los datos que queremos que se escriban en la matriz, filas y columnas de la matriz, finalmente puedo incluir si el llenado es por columnas (byrow = FALSE), o por filas (byrow = TRUE).
 
 Otra forma de convertir un vector en matriz es utilizando la función `dim`. Utilizaremos el vector x que lo generamos hace un momento y convertiremos en una matriz de 10x10.
 
@@ -537,7 +534,7 @@ mode(conta)
 
 ```
 
-Como vemos esta función de pegado `cbind` si bien nos junta los datos, los convierte a los datos categóricos en numéricos, y generar una matriz con los mismos datos.  Como tenemos datos numéricos y categóricos, los deberíamos unir como marco de datos (data frame), para ello utilizamos la función `data.frame`.
+Como vemos, esta función de pegado `cbind`, si bien junta los datos, los convierte a los datos categóricos en numéricos, y genera una matriz con los mismos datos.  Como tenemos datos numéricos y categóricos, los deberíamos unir como marco de datos (data frame), para ello utilizamos la función `data.frame`.
 
 ```{r}
 
@@ -566,11 +563,11 @@ Los argumentos de la función array son: los datos que queremos se escriban en l
 
 #Ejercicios
 
-1. Genere un proyecto con el nombre "Trabajo 1_Nombre".
+1. Genere un proyecto con el nombre "Trabajo 1_Nombre grupo".
 
 2. Abra un script y llámele "resolución de ejercicios".
 
-3. Genere una estructura de índices del Script. Esta estructura debería tener referenciar la pregunta 4 hasta el final de las preguntas de este ejercicio.
+3. Genere una estructura de índices del Script. Esta estructura debería referenciar desde la pregunta 4 hasta el final de las preguntas de este ejercicio.
 
 4. Genere los siguientes vectores:
  - Un vector con datos de edad de los estudiantes del aula.
@@ -583,9 +580,9 @@ Responda:
 ¿Qué tipo de vectores hemos generado?
 ¿Cuantos estudiantes mayores a 25 años hay en el aula?
 
-5. Genere una lista con el vector de edad y género. Vuelva a convertir en vector. El vector resultante es numérico o carácter?
+5. Genere una lista con el vector de edad y género. Vuelva a convertir en vector. ¿El vector resultante es numérico o carácter? Explique la razón del resultado.
 
-6. Genere 3 categorías de edad, entre 18 y 20, entre 20 y 25 y mayores de 25. Nombre a cada categoría; jovenes, adultos y maduros. Para poner el nombre use la función `levels` para asignar los nombres. Cambie la edad de referencia a "adultos", modifique el orden de las categorías para que aparezca primero maduro, luego adulto y finalmente joven.
+6. Genere 3 categorías de edad, entre 18 y 20, entre 20 y 25 y mayores de 25. Nombre a cada categoría; jovenes, adultos y maduros. Para poner el nombre use la función `levels` para asignar los nombres. Modifique el orden de las categorías para que aparezca primero maduro, luego adulto y finalmente joven.
 
 7. Genere una matriz con los datos numéricos de los vectores antes generados.
 
