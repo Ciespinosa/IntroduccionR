@@ -1,6 +1,6 @@
 ---
-title: "IntroducciÃ³n a R"
-author: "Carlos IvÃ¡n Espinosa"
+title: "Introducción a R"
+author: "Carlos Iván Espinosa"
 date: "10 de octubre de 2018"
 output:
   pdf_document:
@@ -44,6 +44,81 @@ La instalación de `RStudio` es similar a R debe ingresar en la página de [RStu
 Una vez que hemos instalado R y RStudio podremos trabajar con los datos. Una cosa importante es que RStudio no puede funcionar si no hemos descargado R, así que asegúrate de descargar los dos programas. Trabajaremos en RStudio así que no es necesario que despliegue R.
 
 >"El uso de comandos exige una curva de aprendizaje mayor que el requerido por las interfaces gráficas, pero las ganancias en términos de independencia, creatividad y control no son comparables. Escribir un código supone una comprensión más profunda de aquello que se desea aplicar" (Elousa 2011).
+
+
+
+#Conozcamos rStudio antes de empezar
+
+![Figura 4. Plataforma RStudio](imagen/RStudio.jpg)
+
+<p> <br> </p>
+
+Como vemos en la figura 4, RStudio está compuesto por cuatro ventanas.  Seguramente en su caso, si acaba de generar el proyecto le aparecerán únicamente tres ventanas. A continuación, describiré cada una de las ventanas.
+
+La __primera ventana__ (la que en su caso seguramente no asoma, izquierda superior) lo constituye documentos que pueden ser de varios tipos. El tipo básico es un documento con extensión __.R__ y que nos sirven para ir guardando el código que vamos construyendo para el análisis.  Vamos abrir un script, esto lo podemos hacer de al menos tres maneras, la primera es ir al menú de la consola seleccionar `File > New File > script`, la segunda forma es seleccionar el icono del documento con una cruz verde ![](imagen/RStudio_nuevo.jpg) y seleccionar `R script`.  La última opción es hacerlo desde el teclado si presionan alt + shift (mayúsculas) y la tecla __N__ obtendrá el mismo resultado.
+
+Existen otros muchos archivos que podemos cargar, pero por ahora este es suficiente.
+
+La __segunda ventana__ (derecha superior), esta ventana se verán todos los objetos que iremos cargando o generando durante el trabajo en RStudio por ahora esta ventana estará vacía.  
+
+>Vamos a generar algunos objetos y ver lo que pasa.
+
+```{r}
+nombre<- "Carlos Ivan"
+apellido<- "Espinosa Iñiguez"
+matriz<- matrix(1:20, 5,4)
+
+```
+
+Ahora podemos ver los objetos creados, algunos salen como valores y la matriz sale como datos.  Los objetos pueden ser abiertos para ver su estructura.  Si hacen clic en el nombre matriz verán que se abre una nueva hoja en la primera ventana que corresponde a estos datos.
+
+La __tercera columna__ (izquierda abajo), corresponde a la consola de R, esta es la consola donde se ejecutarán todos los códigos y se realizarán los análisis. Esta ventana es R. RStudio incorpora a R dentro de su ejecución, por lo que si no hemos instalado R esta ventana no aparecerá. 
+
+La __cuarta columna__ (derecha abajo), en esta ventana tenemos varias pestañas.  La primera `File` nos muestra todos los archivos que están en la carpeta de mi proyecto. Pueden ser archivos de datos, gráficos generados o el script de R que estoy generando. La siguiente pestaña `Plots` mostrará los gráficos que va ejecutando en R. La pestaña `Help` puede ser usada para pedir ayuda de algún paquete o función que necesite usar y no esté claro de cómo hacerlo.
+
+Bueno ya conocemos RStudio ahora si a trabajar.
+
+
+#Los primeros pasos
+
+------
+
+## Primer Paso: Crear un proyecto
+
+El trabajo de programación requiere que seamos muy ordenados, es por esto que considero que el trabajar con RStudio nos ofrece algunas ventajas que nos facilitan el trabajar ordenadamente.  
+
+A continuación, les presentaré una serie de pasos que deben seguir para crear un nuevo proyecto en RStudio.
+
+1. Abrir RStudio
+2. Hacer clic en `file` y seleccionar new `Project`
+3. En la nueva ventana que se abrió podemos seleccionar de entre tres opciones, puesto que aún no estamos trabajando con versiones de control, por ahora podemos seleccionar entre nuevo directorio `New Directory` o un directorio existente `Existing Directory`.
+
+Si seleccionamos `New Directory`(nuevo directorio) se generará una nueva carpeta en la ubicación que querramos, en esta carpeta podremos poner todos los datos y demás información con la cual trabajaremos. Cuando seleccionamos `Existing Directory` (un (directorio existente) RStudio generará un proyecto dentro de una carpeta que ya exista en el computador.  Por organización, siempre que estoy iniciando un nuevo proyecto prefiero crear un nuevo directorio en el cual colocaré únicamente lo que voy a utilizar en los análisis.
+
+4. Si hemos elegido `New Directory` tendremos dos casilleros, el primero indica el nombre que le vamos a poner a la carpeta `Directory Name` y el segundo nos indica donde alojaremos esa carpeta `browse`.
+
+5. Si hemos elegido `Existing Directory`, la siguiente ventana nos permite decir cuál es la carpeta que quiero enlazar. Hacer clic en `browse`  buscar la carpeta donde colocaré el proyecto y aceptar.
+
+
+## Segundo Paso: Los códigos usados
+
+Si bien podemos trabajar directamente en la consola de R ejecutando los códigos, lo mejor es que desde el principio nos acostumbremos a generar scripts donde tengamos la información limpia y podamos siempre saber lo que estamos haciendo. Un Script es un archivo donde tendremos los códigos de R, referenciados y organizados.
+
+__Algunos consejos iniciales__
+
+a. Todos los códigos que ponemos siempre deben ir acompañados de una nota que explique lo que están haciendo. La nota debe estar precedida por __#__, con lo cual R no lee esta parte como código (Figura 4). 
+b. Recuerden siempre colocar sus archivos en la carpeta del proyecto que generaron en el primer paso.
+c. Si está probando cambios en el código, una vez que ha llegado a lo que quiere borre los otros códigos, tenga siempre su código limpio.
+d. Una vez que se escribe el código este puede ser ejecutado desde la consola haciendo clic en la consola en el ícono run ![](imagen/RStudio_Run.jpg) que se encuentra en la parte superior derecha de la ventana del script.  Sin embargo, una mejor forma es tecleando __ctrl__ y __enter__.
+e. Cada vez que iniciamos un nuevo tema en el código podemos poner un título seguido por cuatro guiones medios (- - - -), esto genera en RStudio una estructura de índice que puede ser navegada (Figura 5 círculo rojo abajo a la izquierda).
+
+
+![Figura 5. Estructura del script en RStudio](imagen/estructura.jpg)
+
+
+<p> <br> </p>
+
+>Es importante que sea organizado en la ejecución de los códigos, siga los consejos y podrá mantener un código limpio y facil de acceder y revisar.
 
 #El funcionamiento de R
 
@@ -110,77 +185,6 @@ El funcionamiento de R se da en la memoria activa, así que cada vez que iniciam
 
 >Es muy importante que antes de empezar a trabajar con R seamos conscientes de cómo funciona, esto facilitará entender lo que está haciendo cuando introduce un código.
 
-#Los primeros pasos
-
-------
-
-##Conozcamos rStudio antes de empezar
-
-![Figura 4. Plataforma RStudio](imagen/RStudio.jpg)
-
-<p> <br> </p>
-
-Como vemos en la figura 4, RStudio está compuesto por cuatro ventanas.  Seguramente en su caso, si acaba de generar el proyecto le aparecerán únicamente tres ventanas. A continuación, describiré cada una de las ventanas.
-
-La __primera ventana__ (la que en su caso seguramente no asoma, izquierda superior) lo constituye documentos que pueden ser de varios tipos. El tipo básico es un documento con extensión __.R__ y que nos sirven para ir guardando el código que vamos construyendo para el análisis.  Vamos abrir un script, esto lo podemos hacer de al menos tres maneras, la primera es ir al menú de la consola seleccionar `File > New File > script`, la segunda forma es seleccionar el icono del documento con una cruz verde ![](imagen/RStudio_nuevo.jpg) y seleccionar `R script`.  La última opción es hacerlo desde el teclado si presionan alt + shift (mayúsculas) y la tecla __N__ obtendrá el mismo resultado.
-
-Existen otros muchos archivos que podemos cargar, pero por ahora este es suficiente.
-
-La __segunda ventana__ (derecha superior), esta ventana se verán todos los objetos que iremos cargando o generando durante el trabajo en RStudio por ahora esta ventana estará vacía.  
-
->Vamos a generar algunos objetos y ver lo que pasa.
-
-```{r}
-nombre<- "Carlos Ivan"
-apellido<- "Espinosa Iñiguez"
-matriz<- matrix(1:20, 5,4)
-
-```
-
-Ahora podemos ver los objetos creados, algunos salen como valores y la matriz sale como datos.  Los objetos pueden ser abiertos para ver su estructura.  Si hacen clic en el nombre matriz verán que se abre una nueva hoja en la primera ventana que corresponde a estos datos.
-
-La __tercera columna__ (izquierda abajo), corresponde a la consola de R, esta es la consola donde se ejecutarán todos los códigos y se realizarán los análisis. Esta ventana es R. RStudio incorpora a R dentro de su ejecución, por lo que si no hemos instalado R esta ventana no aparecerá. 
-
-La __cuarta columna__ (derecha abajo), en esta ventana tenemos varias pestañas.  La primera `File` nos muestra todos los archivos que están en la carpeta de mi proyecto. Pueden ser archivos de datos, gráficos generados o el script de R que estoy generando. La siguiente pestaña `Plots` mostrará los gráficos que va ejecutando en R. La pestaña `Help` puede ser usada para pedir ayuda de algún paquete o función que necesite usar y no esté claro de cómo hacerlo.
-
-Bueno ya conocemos RStudio ahora si a trabajar.
-
-## Primer Paso: Crear un proyecto
-
-El trabajo de programación requiere que seamos muy ordenados, es por esto que considero que el trabajar con RStudio nos ofrece algunas ventajas que nos facilitan el trabajar ordenadamente.  
-
-A continuación, les presentaré una serie de pasos que deben seguir para crear un nuevo proyecto en RStudio.
-
-1. Abrir RStudio
-2. Hacer clic en `file` y seleccionar new `Project`
-3. En la nueva ventana que se abrió podemos seleccionar de entre tres opciones, puesto que aún no estamos trabajando con versiones de control, por ahora podemos seleccionar entre nuevo directorio `New Directory` o un directorio existente `Existing Directory`.
-
-Si seleccionamos `New Directory`(nuevo directorio) se generará una nueva carpeta en la ubicación que querramos, en esta carpeta podremos poner todos los datos y demás información con la cual trabajaremos. Cuando seleccionamos `Existing Directory` (un (directorio existente) RStudio generará un proyecto dentro de una carpeta que ya exista en el computador.  Por organización, siempre que estoy iniciando un nuevo proyecto prefiero crear un nuevo directorio en el cual colocaré únicamente lo que voy a utilizar en los análisis.
-
-4. Si hemos elegido `New Directory` tendremos dos casilleros, el primero indica el nombre que le vamos a poner a la carpeta `Directory Name` y el segundo nos indica donde alojaremos esa carpeta `browse`.
-
-5. Si hemos elegido `Existing Directory`, la siguiente ventana nos permite decir cuál es la carpeta que quiero enlazar. Hacer clic en `browse`  buscar la carpeta donde colocaré el proyecto y aceptar.
-
-
-## Segundo Paso: Los códigos usados
-
-Si bien podemos trabajar directamente en la consola de R ejecutando los códigos, lo mejor es que desde el principio nos acostumbremos a generar scripts donde tengamos la información limpia y podamos siempre saber lo que estamos haciendo. Un Script es un archivo donde tendremos los códigos de R, referenciados y organizados.
-
-__Algunos consejos iniciales__
-
-a. Todos los códigos que ponemos siempre deben ir acompañados de una nota que explique lo que están haciendo. La nota debe estar precedida por __#__, con lo cual R no lee esta parte como código (Figura 4). 
-b. Recuerden siempre colocar sus archivos en la carpeta del proyecto que generaron en el primer paso.
-c. Si está probando cambios en el código, una vez que ha llegado a lo que quiere borre los otros códigos, tenga siempre su código limpio.
-d. Una vez que se escribe el código este puede ser ejecutado desde la consola haciendo clic en la consola en el ícono run ![](imagen/RStudio_Run.jpg) que se encuentra en la parte superior derecha de la ventana del script.  Sin embargo, una mejor forma es tecleando __ctrl__ y __enter__.
-e. Cada vez que iniciamos un nuevo tema en el código podemos poner un título seguido por cuatro guiones medios (- - - -), esto genera en RStudio una estructura de índice que puede ser navegada (Figura 5 círculo rojo abajo a la izquierda).
-
-
-![Figura 5. Estructura del script en RStudio](imagen/estructura.jpg)
-
-
-<p> <br> </p>
-
->Es importante que sea organizado en la ejecución de los códigos, siga los consejos y podrá mantener un código limpio y facil de acceder y revisar.
 
 #Los objetos
 
@@ -304,7 +308,7 @@ La estructura de base de datos en R puede ser descrita en base de su dimensional
 
 ```{r, echo=FALSE}
 library(knitr)
-xt <- matrix(c("Atomic vector", "Matrix", "Array", "List", "Data frame"),3,2)
+xt <- matrix(c("Atomic vector", "Matrix", "Array", "List", "Data frame"," "),3,2)
 colnames(xt) <- c("Homogéneos", "Heterogéneos")
 rownames(xt) <- c("1d", "2d", "nd")
 
@@ -563,19 +567,29 @@ Los argumentos de la función array son: los datos que queremos se escriban en l
 #Ejercicios
 
 1. Genere un proyecto con el nombre "Trabajo 1_Nombre".
+
 2. Abra un script y llámele "resolución de ejercicios".
+
 3. Genere una estructura de índices del Script. Esta estructura debería tener referenciar la pregunta 4 hasta el final de las preguntas de este ejercicio.
+
 4. Genere los siguientes vectores:
  - Un vector con datos de edad de los estudiantes del aula.
  - Un vector con la altura de los estudiantes del aula.
  - Un vector con el género de los estudiantes del aula.
  - Un vector para conocer aquellos estudiantes mayores de 25
+
 Responda:
+
 ¿Qué tipo de vectores hemos generado?
 ¿Cuantos estudiantes mayores a 25 años hay en el aula?
+
 5. Genere una lista con el vector de edad y género. Vuelva a convertir en vector. El vector resultante es numérico o carácter?
+
 6. Genere 3 categorías de edad, entre 18 y 20, entre 20 y 25 y mayores de 25. Nombre a cada categoría; jovenes, adultos y maduros. Para poner el nombre use la función `levels` para asignar los nombres. Cambie la edad de referencia a "adultos", modifique el orden de las categorías para que aparezca primero maduro, luego adulto y finalmente joven.
+
 7. Genere una matriz con los datos numéricos de los vectores antes generados.
+
 8. Genere una data frame con los vectores numéricos y caracteres.
+
 9. Convierta el data frame en una matriz  y verifique que tipo de elementos constituyen esta matriz.
 
