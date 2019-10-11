@@ -78,9 +78,9 @@ matriz<- matrix(1:20, 5,4)
 
 Ahora podemos ver los objetos creados, algunos salen como valores y la matriz sale como datos.  Los objetos pueden ser abiertos para ver su estructura. Si hacen clic en el nombre matriz verán que se abre una nueva hoja en la primera ventana que corresponde a estos datos.
 
-La __tercera columna__ (izquierda abajo), corresponde a la consola de R, esta es la consola donde se ejecutarán todos los códigos y se realizarán los análisis. Esta ventana es R. RStudio incorpora a R dentro de su ejecución, por lo que si no hemos instalado R esta ventana no aparecerá. 
+La __tercera ventana__ (izquierda abajo), corresponde a la consola de R, esta es la consola donde se ejecutarán todos los códigos y se realizarán los análisis. Esta ventana es R. RStudio incorpora a R dentro de su ejecución, por lo que si no hemos instalado R esta ventana no aparecerá. 
 
-La __cuarta columna__ (derecha abajo), en esta ventana tenemos varias pestañas.  La primera `File` nos muestra todos los archivos que están en la carpeta de mi proyecto, guardados en el disco duro. Pueden ser archivos de datos, gráficos generados o el script de R que estoy generando. La siguiente pestaña `Plots` mostrará los gráficos que va ejecutando en R. La pestaña `Help` puede ser usada para pedir ayuda de algún paquete o función que necesite usar, y no esté claro de cómo hacerlo.
+La __cuarta ventana__ (derecha abajo), en esta ventana tenemos varias pestañas.  La primera `File` nos muestra todos los archivos que están en la carpeta de mi proyecto, guardados en el disco duro. Pueden ser archivos de datos, gráficos generados o el script de R que estoy generando. La siguiente pestaña `Plots` mostrará los gráficos que va ejecutando en R. La pestaña `Help` puede ser usada para pedir ayuda de algún paquete o función que necesite usar, y no esté claro de cómo hacerlo.
 
 Bueno ya conocemos RStudio ahora si a trabajar. 
 
@@ -113,7 +113,7 @@ Si bien podemos trabajar directamente en la consola de R para  ejecutar los cód
 
 __Algunos consejos iniciales__
 
-a. Todos los códigos que ponemos siempre deben ir acompañados de una nota que explique lo que están haciendo. La nota debe estar precedida por __#__, con lo cual R no lee esta parte como código (Figura 4). 
+a. Todos los códigos usados para realizar los diferentes análisis, siempre deben ir acompañados de una nota que explique lo que están haciendo. La nota debe estar precedida por __#__, con lo cual R no lee esta parte como código (Figura 4). 
 b. Recuerden siempre colocar sus archivos de datos en la carpeta del proyecto que generaron en el primer paso.
 c. Si está probando cambios en el código, una vez que tiene un código que funciona, borre el código con error o que no le funcionó, <mark>tenga siempre su código limpio</mark>.
 
