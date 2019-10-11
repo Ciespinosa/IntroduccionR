@@ -1,0 +1,17 @@
+\contentsline {section}{Instalando R y RStudio}{1}{section*.2}
+\contentsline {section}{Conozcamos RStudio antes de empezar}{3}{section*.3}
+\contentsline {section}{Los primeros pasos}{4}{section*.4}
+\contentsline {subsection}{Primer Paso: Crear un proyecto}{4}{section*.5}
+\contentsline {subsection}{Segundo Paso: Los c\IeC {\'o}digos usados}{5}{section*.6}
+\contentsline {section}{El funcionamiento de R}{6}{section*.7}
+\contentsline {section}{Los objetos}{6}{section*.8}
+\contentsline {section}{Operaci\IeC {\'o}n de los objetos}{7}{section*.9}
+\contentsline {subsection}{Tipos de Objetos}{8}{section*.10}
+\contentsline {subsection}{Estructura de los objetos}{10}{section*.11}
+\contentsline {subsubsection}{Vectores (Vectors)}{10}{section*.12}
+\contentsline {subsubsection}{Factores (Factors)}{13}{section*.13}
+\contentsline {subsubsection}{Listas}{14}{section*.14}
+\contentsline {subsubsection}{Matrices (Matrix)}{15}{section*.15}
+\contentsline {subsubsection}{Marco de Datos (data.frame)}{16}{section*.16}
+\contentsline {subsubsection}{Arreglos (Arrays)}{17}{section*.17}
+\contentsline {section}{Ejercicios}{17}{section*.18}
