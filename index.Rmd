@@ -1,5 +1,6 @@
 ---
-title: "Introducción a R"
+title: "Introducción a R:"
+subtitle: "Los primeros pasos"
 author: "Carlos Iván Espinosa"
 date: "10 de octubre 2019"
 output:
